@@ -1,4 +1,4 @@
-/* ReLeaf problem section. Four independent pieces; each stops if its element
+/* ReLeaf problem section. Three independent pieces; each stops if its element
    is missing. With JS off or motion reduced, everything shows its final state. */
 
 (function () {
@@ -50,7 +50,7 @@
     io.observe(atlas);
   })();
 
-  /* 2  the distance: the camera follows the discovery from lab to shelf */
+  /* 2  the distance: the camera follows a new biological from lab to shelf */
   (function () {
     var wrap = document.getElementById("journey");
     if (!wrap || reduced) return;
@@ -61,14 +61,15 @@
     var mid = document.getElementById("jr-mid");
     var yearEl = document.getElementById("jr-year");
     var ageEl = document.getElementById("jr-age");
-    var sumEl = document.getElementById("jr-summers");
+    var winEl = document.getElementById("jr-windows");
+    var tickRect = document.getElementById("jr-tickrect");
     var posts = wrap.querySelectorAll(".jr-post");
     var suns = wrap.querySelectorAll(".jr-summer");
     wrap.classList.add("is-live");
 
     // scene units: 6000 x 1000. Year k sits at X0 + k * STEP.
-    var X0 = 1100, STEP = 325, LAB = { x: 806, y: 640 }, ROAD = 760, SHELF = 5000, FARMER = 5470;
-    var AGE = 63, YEARS = 12;
+    var X0 = 1100, STEP = 780, LAB = { x: 806, y: 640 }, ROAD = 760, SHELF = 5000, FARMER = 5470;
+    var AGE = 63, YEARS = 5, WINDOWS = 365;
     var last = -1;
 
     frames.push(function () {
@@ -97,12 +98,15 @@
       far.setAttribute("transform", "translate(" + (panUnits * 0.55).toFixed(1) + " 0)");
       mid.setAttribute("transform", "translate(" + (panUnits * 0.25).toFixed(1) + " 0)");
 
-      var year = Math.max(0, Math.min(YEARS, Math.floor((ox - X0) / STEP + 0.001)));
+      var done = clamp01((ox - X0) / (SHELF - X0));
+      tickRect.setAttribute("width", (Math.max(0, ox - X0) + 5).toFixed(1));
+      var windows = Math.round(done * WINDOWS);
+      winEl.textContent = windows;
+      var year = Math.min(YEARS, Math.floor(windows / 73));
       if (year !== last) {
         last = year;
         yearEl.textContent = year;
         ageEl.textContent = AGE + year;
-        sumEl.textContent = year;
         posts.forEach(function (g) { g.classList.toggle("on", +g.dataset.y <= year); });
         suns.forEach(function (g) { g.classList.toggle("on", +g.dataset.y <= year); });
       }

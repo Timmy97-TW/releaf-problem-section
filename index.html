@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="assets/css/problem.css" />
 </head>
 <body>
-<!-- Problem section draft for wiki/index.html. Sits between the hero and the
-     dark act. Every class is prefixed .pb- or .jr-. Sources for each number
-     are named above its section. -->
+<!-- Problem section draft for wiki/index.html, between the hero and the dark
+     act. Classes are prefixed .pb- or .jr-. Numbered sources are listed in
+     the footer. -->
 
   <header class="pb-hero">
     <div class="pb-inner">
@@ -20,182 +20,141 @@
     </div>
   </header>
 
-  <!-- 01. Source: geospatial-analysis/index.html. 97% and 99.8% are the
-       atlas shares already on the homepage; add them to the geospatial page. -->
-  <section class="pb-band" id="threat" aria-labelledby="threat-title">
-    <div class="pb-inner">
-      <header class="pb-head">
+  <!-- 01 -->
+  <section class="pb-screen pb-threat" id="threat" aria-labelledby="threat-title">
+    <div class="pb-inner pb-threat__grid">
+      <div class="pb-threat__text">
         <p class="pb-index"><span>01</span>The threat</p>
         <h2 class="pb-title" id="threat-title">The weather swings hardest where the farms are smallest.</h2>
-        <p class="lede">Taiwan has warmed 0.29&nbsp;&deg;C per decade since 1991,
-        nearly three times the earlier rate. We scored every county for how far
-        its temperature and rain swing, then laid every farm parcel on the main
-        island over the result.</p>
-      </header>
+        <p class="pb-lede">Taiwan has warmed 0.29&nbsp;&deg;C per decade since 1991.
+        We scored each county for how far its temperature and rainfall swing,
+        then overlaid every farm parcel on the main island.<a class="pb-ref" href="#src-1">1</a></p>
 
-      <div class="pb-mapgrid">
-        <figure class="pb-map">
-          <div class="pb-map__toggle" role="group" aria-label="Map layer">
-            <button type="button" data-view="weather" aria-pressed="false">The weather</button>
-            <button type="button" data-view="farms" aria-pressed="true">The farms on it</button>
+        <dl class="pb-figs">
+          <div class="pb-fig">
+            <dt>97%</dt>
+            <dd>of mapped farmland lies in parcels under 2&nbsp;ha; 99.8% in the most volatile band</dd>
           </div>
-          <div class="pb-atlas" id="pb-atlas" data-view="farms" role="img"
-               aria-label="Map of Taiwan. Counties shaded by climate volatility, pale in the north and east, darkest through the central west and south-west. Farm parcels under two hectares, in dark green, cover almost all of the western plain.">
-            <img class="pb-atlas__l pb-atlas__sizer" src="assets/img/smalldim.webp" width="800" height="1267" alt="" />
-            <img class="pb-atlas__l" data-l="w" src="assets/img/v1.webp" width="800" height="1267" alt="" />
-            <img class="pb-atlas__l" data-l="w" src="assets/img/v2.webp" width="800" height="1267" alt="" />
-            <img class="pb-atlas__l" data-l="w" src="assets/img/v3.webp" width="800" height="1267" alt="" />
-            <img class="pb-atlas__l" data-l="w" src="assets/img/v4.webp" width="800" height="1267" alt="" />
-            <img class="pb-atlas__l" data-l="w" src="assets/img/v5.webp" width="800" height="1267" alt="" />
-            <img class="pb-atlas__l" data-l="f" src="assets/img/base.webp" width="800" height="1267" alt="" />
-            <img class="pb-atlas__l" data-l="f" src="assets/img/large.webp" width="800" height="1267" alt="" />
+          <div class="pb-fig">
+            <dt>26.7<small>&nbsp;&deg;C</small></dt>
+            <dd>mean July night in Kaohsiung, inside the 25&ndash;33&nbsp;&deg;C range that damages rice at grain filling</dd>
           </div>
-          <figcaption class="pb-key">
-            <span class="pb-key__grp">Climate volatility</span>
-            <span class="pb-ramp" aria-hidden="true"><i style="--c:var(--vol-1)"></i><i style="--c:var(--vol-2)"></i><i style="--c:var(--vol-3)"></i><i style="--c:var(--vol-4)"></i><i style="--c:var(--vol-5)"></i></span>
-            <span class="pb-ramp__ends"><span>0.38</span><span>0.93</span></span>
-            <span class="pb-key__grp pb-key__grp--farm">Farm parcels</span>
-            <span class="pb-key__row"><i style="--c:var(--parcel-small)"></i>Under 2&nbsp;ha</span>
-            <span class="pb-key__row"><i style="--c:var(--parcel-large)"></i>Over 2&nbsp;ha</span>
-          </figcaption>
-        </figure>
+          <div class="pb-fig">
+            <dt>63.5</dt>
+            <dd>mean age of a Taiwanese farmer; over half are older than 65</dd>
+          </div>
+          <div class="pb-fig">
+            <dt>0.9&ndash;1.1<small>&nbsp;ha</small></dt>
+            <dd>typical area worked by a farm household</dd>
+          </div>
+        </dl>
 
-        <div class="pb-facts">
-          <dl class="pb-figs">
-            <div class="pb-fig">
-              <dt>97%</dt>
-              <dd>of mapped farmland is in parcels under two hectares, and 99.8% on the ground that swings hardest.</dd>
-            </div>
-            <div class="pb-fig">
-              <dt>26.7<small>&nbsp;&deg;C</small></dt>
-              <dd>is Kaohsiung&rsquo;s average July night, already inside the 25&ndash;33&nbsp;&deg;C band that damages rice as the grain sets.</dd>
-            </div>
-            <div class="pb-fig">
-              <dt>63.5</dt>
-              <dd>is the average Taiwanese farmer&rsquo;s age. More than half are over 65.</dd>
-            </div>
-            <div class="pb-fig">
-              <dt>0.9&ndash;1.1<small>&nbsp;ha</small></dt>
-              <dd>is what most farm households work.</dd>
-            </div>
-          </dl>
-
-          <div class="pb-story">
-            <p class="pb-story__label">No instruments on a small farm</p>
-            <p>Before a dry spell, Ms. Chen lays dried weeds over her soil so
-            the morning dew soaks in slowly. That buys her about three weeks
-            before she checks again, a rhythm learned over twenty-five years on
-            one plot. She reads stress by eye.</p>
-            <p>Flash droughts now form faster, and nearly half develop inside
-            five days. One slow week in a three-week rhythm is enough to lose
-            the crop.</p>
-          </div>
+        <div class="pb-earns">
+          <p class="pb-earns__label">Protection has to arrive</p>
+          <ul class="pb-earns__list">
+            <li class="pb-tag">On demand</li>
+            <li class="pb-tag">At the right time</li>
+            <li class="pb-tag">In the right amount</li>
+          </ul>
         </div>
       </div>
 
-      <div class="pb-earns">
-        <p class="pb-earns__label">Protection has to arrive</p>
-        <ul class="pb-earns__list">
-          <li class="pb-tag">On demand</li>
-          <li class="pb-tag">At the right time</li>
-          <li class="pb-tag">In the right amount</li>
-        </ul>
-      </div>
+      <figure class="pb-map">
+        <div class="pb-map__toggle" role="group" aria-label="Map layer">
+          <button type="button" data-view="weather" aria-pressed="false">Climate volatility</button>
+          <button type="button" data-view="farms" aria-pressed="true">+ Farm parcels</button>
+        </div>
+        <div class="pb-atlas" id="pb-atlas" data-view="farms" role="img"
+             aria-label="Map of Taiwan. Counties shaded by climate volatility, pale in the north and east, darkest through the central west and south-west. Farm parcels under two hectares, in dark green, cover almost all of the western plain.">
+          <img class="pb-atlas__l pb-atlas__sizer" src="assets/img/smalldim.webp" width="800" height="1267" alt="" />
+          <img class="pb-atlas__l" data-l="w" src="assets/img/v1.webp" width="800" height="1267" alt="" />
+          <img class="pb-atlas__l" data-l="w" src="assets/img/v2.webp" width="800" height="1267" alt="" />
+          <img class="pb-atlas__l" data-l="w" src="assets/img/v3.webp" width="800" height="1267" alt="" />
+          <img class="pb-atlas__l" data-l="w" src="assets/img/v4.webp" width="800" height="1267" alt="" />
+          <img class="pb-atlas__l" data-l="w" src="assets/img/v5.webp" width="800" height="1267" alt="" />
+          <img class="pb-atlas__l" data-l="f" src="assets/img/base.webp" width="800" height="1267" alt="" />
+          <img class="pb-atlas__l" data-l="f" src="assets/img/large.webp" width="800" height="1267" alt="" />
+        </div>
+        <figcaption class="pb-key">
+          <span class="pb-key__grp">Volatility index</span>
+          <span class="pb-ramp" aria-hidden="true"><i style="--c:var(--vol-1)"></i><i style="--c:var(--vol-2)"></i><i style="--c:var(--vol-3)"></i><i style="--c:var(--vol-4)"></i><i style="--c:var(--vol-5)"></i></span>
+          <span class="pb-ramp__ends"><span>0.38</span><span>0.93</span></span>
+          <span class="pb-key__grp pb-key__grp--farm">Parcels</span>
+          <span class="pb-key__row"><i style="--c:var(--parcel-small)"></i>&lt; 2&nbsp;ha</span>
+          <span class="pb-key__row"><i style="--c:var(--parcel-large)"></i>&ge; 2&nbsp;ha</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- 02. Sources: software/ (fermenter, cold chain, registration dossier);
-       description/ (the dried-sachet objection); safety-and-security/ and
-       laws-and-regulations/ (containment and approval are open). No cost per
-       litre exists for either route, so the table compares requirements. -->
-  <section class="pb-band pb-band--tint" id="gap" aria-labelledby="gap-title">
-    <div class="pb-inner">
-      <header class="pb-head">
+  <!-- 02 -->
+  <section class="pb-screen pb-gap" id="gap" aria-labelledby="gap-title">
+    <div class="pb-inner pb-gap__grid">
+      <div class="pb-gap__text">
         <p class="pb-index"><span>02</span>The gap</p>
-        <h2 class="pb-title" id="gap-title">Protectants are made far from the farm. Making them nearby brings live bacteria onto it.</h2>
-        <p class="lede">Biological protectants that carry a plant through heat
-        and drought are on sale in Taiwan today. A grower buys them from
-        a company that owns a fermenter, a cold chain and a registration dossier,
-        then waits for the delivery.</p>
-      </header>
+        <h2 class="pb-title" id="gap-title">Protectants are made either contained and far away, or close and uncontained.</h2>
+        <p class="pb-lede">Engineered microbes that produce crop protectants
+        are grown under contained use, inside licensed facilities.<a class="pb-ref" href="#src-2">2</a>
+        Their product reaches a field only after formulation, storage and
+        distribution.</p>
+        <p class="pb-lede">Growing the same microbe beside the crop removes that
+        delay. It also places a living engineered organism on open land, which
+        regulators treat as deliberate release, a separate and stricter
+        category.<a class="pb-ref" href="#src-3">3</a></p>
+        <p class="pb-lede pb-lede--strong">No current route is both close to the crop and contained.</p>
 
-      <div class="pb-objection">
-        <p class="pb-objection__q"><span class="pb-objection__label">So why not buy them?</span>Because the bottle is made for an average season.</p>
-        <p class="pb-objection__a">Dried spore products keep at room
-        temperature and cost little. Timing and dose are what fail. A product is made months before anyone knows what the weather
-        will do, packed in fixed sizes for an average field, and delivered on
-        the distributor&rsquo;s schedule. A drought that forms in five days
-        arrives before the order does.</p>
+        <div class="pb-earns">
+          <p class="pb-earns__label">Production has to be</p>
+          <ul class="pb-earns__list">
+            <li class="pb-tag">On site</li>
+            <li class="pb-tag">Contained</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="pb-ledger" role="region" aria-labelledby="ledger-cap" tabindex="0">
-        <table>
-          <caption id="ledger-cap">Two places a protectant could be made</caption>
-          <thead>
-            <tr>
-              <th scope="col"><span class="visually-hidden">Question</span></th>
-              <th scope="col">In a central plant</th>
-              <th scope="col" class="is-farm">On the farm</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Steps before the farmer has it</th>
-              <td><b class="pb-num">6</b>factory, production, purification, packaging, transport, storage</td>
-              <td class="is-farm"><b class="pb-num">0</b>made beside the field</td>
-            </tr>
-            <tr>
-              <th scope="row">When it is made</th>
-              <td>Months ahead, against a sales forecast</td>
-              <td class="is-farm">The week the weather turns</td>
-            </tr>
-            <tr>
-              <th scope="row">How much</th>
-              <td>A fixed pack size</td>
-              <td class="is-farm">Enough for one field</td>
-            </tr>
-            <tr class="is-risk">
-              <th scope="row">Where the bacteria are kept</th>
-              <td>Inside a licensed facility</td>
-              <td class="is-farm">Open ground, with no containment building, autoclave or biosafety officer</td>
-            </tr>
-            <tr class="is-risk">
-              <th scope="row">Who approves it</th>
-              <td>A dossier the company already holds</td>
-              <td class="is-farm">No approval route has been confirmed in Taiwan</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <figure class="pb-quad" aria-labelledby="quad-cap">
+        <figcaption id="quad-cap" class="visually-hidden">A two-by-two grid. Horizontal axis: distance from the crop, from far to beside it. Vertical axis: whether engineered cells enter the field. Central biomanufacturing is far and contained. Engineered live inoculants are far and released. On-farm culturing of an engineered strain is close and released. The close and contained quadrant is empty.</figcaption>
+        <div class="pb-quad__plot" aria-hidden="true">
+          <span class="pb-quad__y pb-quad__y--top">Engineered cells kept out of the field</span>
+          <span class="pb-quad__y pb-quad__y--bot">Engineered cells released</span>
 
-      <div class="pb-catch">
-        <p class="pb-catch__label">The catch</p>
-        <p class="pb-catch__claim">Making it on the farm puts live engineered bacteria on the farm.</p>
-        <p class="pb-catch__body">The protein a plant needs is made by
-        engineered cells, and a fermenter moved to the field brings those cells
-        with it. The protein has to reach the soil. The cells that make it must
-        stay out, on land that was never built to hold them.</p>
-      </div>
+          <div class="pb-cell pb-cell--tl">
+            <b>Central biomanufacturing</b>
+            <span>Contained use. Reaches the crop after formulation, storage and distribution.</span>
+          </div>
+          <div class="pb-cell pb-cell--tr">
+            <b>Empty</b>
+            <span>Made beside the crop, with engineered cells kept out of the field.</span>
+          </div>
+          <div class="pb-cell pb-cell--bl">
+            <b>Engineered live inoculants</b>
+            <span>Cells applied to soil by design. Regulated as release.</span>
+          </div>
+          <div class="pb-cell pb-cell--br">
+            <b>On-farm culture of an engineered strain</b>
+            <span>No delay and no barrier. Release begins where production does.</span>
+          </div>
 
-      <div class="pb-earns">
-        <p class="pb-earns__label">Production has to be</p>
-        <ul class="pb-earns__list">
-          <li class="pb-tag">On site</li>
-          <li class="pb-tag">Contained and biosafe</li>
-        </ul>
-      </div>
+          <span class="pb-quad__x pb-quad__x--l">Far from the crop</span>
+          <span class="pb-quad__x pb-quad__x--r">Beside the crop</span>
+        </div>
+      </figure>
     </div>
   </section>
 
-  <!-- 03. The lab-to-field distance. The twelve-year path is illustrative and
-       says so on the page. 63.5 is from geospatial-analysis/. -->
+  <div class="pb-fade" aria-hidden="true"></div>
+
+  <!-- 03 -->
   <section class="pb-dist" id="distance" aria-labelledby="dist-title">
     <div class="pb-inner pb-dist__head">
       <p class="pb-index pb-index--dark"><span>03</span>The distance</p>
-      <h2 class="pb-title" id="dist-title">The newest protectants spend years in a lab before a farmer can buy one.</h2>
-      <p class="lede">What reaches a farm shop finished its testing long ago.
-      The protectants being discovered now sit in journals and university
-      labs, far from the people who would use them.</p>
+      <h2 class="pb-title" id="dist-title">A drought can form in five days. A new biological takes about five years to reach a farmer.</h2>
+      <p class="pb-lede">Between 34% and 46% of flash droughts now reach
+      drought within a single five-day window.<a class="pb-ref" href="#src-4">4</a>
+      A new biological pesticide takes about four to five years from development
+      to launch.<a class="pb-ref" href="#src-5">5</a> The route is also narrow:
+      EU fertilising-product rules admit microbial biostimulants from only four
+      groups of organisms.<a class="pb-ref" href="#src-6">6</a></p>
     </div>
 
     <div class="jr" id="journey">
@@ -483,24 +442,20 @@
 </g>
 <circle cx="5560" cy="600" r="420" fill="url(#jr-sun)"/><circle cx="5560" cy="600" r="70" fill="#fff1cf"/>
 <g class="jr-summers">
-<g class="jr-summer" data-y="1" transform="translate(1425 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="2" transform="translate(1750 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="3" transform="translate(2075 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="4" transform="translate(2400 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="5" transform="translate(2725 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="6" transform="translate(3050 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="7" transform="translate(3375 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="8" transform="translate(3700 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="9" transform="translate(4025 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="10" transform="translate(4350 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="11" transform="translate(4675 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
-<g class="jr-summer" data-y="12" transform="translate(5000 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="1" transform="translate(1880 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="2" transform="translate(2660 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="3" transform="translate(3440 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="4" transform="translate(4220 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="5" transform="translate(5000 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
 </g>
 <g id="jr-far"><path d="M-400,1000 L-400,597.8 L-360,594.8 L-320,593.0 L-280,592.5 L-240,593.4 L-200,595.5 L-160,598.3 L-120,601.0 L-80,603.0 L-40,603.5 L0,602.2 L40,598.8 L80,593.4 L120,586.4 L160,578.4 L200,570.1 L240,562.5 L280,556.1 L320,551.4 L360,548.7 L400,547.8 L440,548.4 L480,550.0 L520,551.8 L560,553.2 L600,553.8 L640,553.4 L680,551.8 L720,549.4 L760,546.7 L800,544.4 L840,543.1 L880,543.6 L920,546.1 L960,550.9 L1000,557.7 L1040,566.2 L1080,575.6 L1120,585.2 L1160,594.1 L1200,601.8 L1240,607.7 L1280,611.7 L1320,614.0 L1360,614.8 L1400,614.9 L1440,614.8 L1480,615.2 L1520,616.6 L1560,619.2 L1600,623.0 L1640,627.6 L1680,632.6 L1720,637.3 L1760,640.9 L1800,642.9 L1840,643.0 L1880,641.0 L1920,637.2 L1960,632.0 L2000,626.1 L2040,620.2 L2080,615.3 L2120,611.8 L2160,610.1 L2200,610.4 L2240,612.5 L2280,615.8 L2320,619.8 L2360,623.7 L2400,626.9 L2440,628.9 L2480,629.5 L2520,628.6 L2560,626.6 L2600,624.1 L2640,621.7 L2680,620.0 L2720,619.6 L2760,620.7 L2800,623.5 L2840,627.6 L2880,632.7 L2920,637.8 L2960,642.4 L3000,645.6 L3040,646.9 L3080,646.0 L3120,642.8 L3160,637.6 L3200,631.0 L3240,623.6 L3280,616.3 L3320,609.5 L3360,604.0 L3400,599.8 L3440,597.0 L3480,595.2 L3520,593.9 L3560,592.5 L3600,590.4 L3640,587.0 L3680,582.2 L3720,575.8 L3760,568.4 L3800,560.2 L3840,552.2 L3880,545.1 L3920,539.5 L3960,536.0 L4000,534.9 L4040,536.2 L4080,539.4 L4120,544.1 L4160,549.5 L4200,554.9 L4240,559.5 L4280,563.0 L4320,565.1 L4360,565.9 L4400,565.7 L4440,565.1 L4480,564.8 L4520,565.3 L4560,567.2 L4600,570.6 L4640,575.5 L4680,581.7 L4720,588.5 L4760,595.2 L4800,601.2 L4840,605.7 L4880,608.2 L4920,608.7 L4960,607.1 L5000,603.8 L5040,599.6 L5080,595.1 L5120,591.1 L5160,588.2 L5200,586.9 L5240,587.4 L5280,589.5 L5320,592.8 L5360,596.7 L5400,600.7 L5440,603.9 L5480,606.1 L5520,606.9 L5560,606.3 L5600,604.8 L5640,602.8 L5680,601.0 L5720,600.1 L5760,600.7 L5800,603.2 L5840,607.7 L5880,614.1 L5920,621.8 L5960,630.2 L6000,638.5 L6040,645.9 L6080,651.7 L6120,655.6 L6160,657.4 L6200,657.4 L6240,655.8 L6280,653.4 L6320,650.7 L6360,648.5 L6400,647.1 L6400,1000 Z" fill="#1b2e24" opacity=".7"/></g>
 <g id="jr-mid"><path d="M-400,1000 L-400,713.8 L-360,717.0 L-320,720.0 L-280,722.4 L-240,723.5 L-200,723.2 L-160,721.2 L-120,717.6 L-80,712.5 L-40,706.6 L0,700.2 L40,694.0 L80,688.5 L120,684.0 L160,680.6 L200,678.3 L240,677.0 L280,676.1 L320,675.3 L360,674.1 L400,672.1 L440,669.3 L480,665.5 L520,661.1 L560,656.3 L600,651.7 L640,647.8 L680,645.1 L720,643.9 L760,644.3 L800,646.2 L840,649.3 L880,653.2 L920,657.4 L960,661.2 L1000,664.3 L1040,666.2 L1080,666.9 L1120,666.4 L1160,665.1 L1200,663.3 L1240,661.5 L1280,660.2 L1320,659.8 L1360,660.3 L1400,661.9 L1440,664.2 L1480,666.9 L1520,669.5 L1560,671.6 L1600,672.7 L1640,672.5 L1680,670.9 L1720,668.2 L1760,664.5 L1800,660.5 L1840,656.6 L1880,653.4 L1920,651.4 L1960,650.8 L2000,651.7 L2040,654.0 L2080,657.4 L2120,661.4 L2160,665.4 L2200,669.2 L2240,672.2 L2280,674.3 L2320,675.6 L2360,676.1 L2400,676.4 L2440,676.9 L2480,677.9 L2520,680.0 L2560,683.3 L2600,687.8 L2640,693.5 L2680,699.8 L2720,706.3 L2760,712.5 L2800,717.8 L2840,721.7 L2880,724.0 L2920,724.7 L2960,723.9 L3000,722.0 L3040,719.4 L3080,716.7 L3120,714.3 L3160,712.6 L3200,711.8 L3240,711.7 L3280,712.2 L3320,712.9 L3360,713.3 L3400,713.0 L3440,711.6 L3480,709.0 L3520,705.1 L3560,700.1 L3600,694.4 L3640,688.5 L3680,683.0 L3720,678.4 L3760,675.2 L3800,673.4 L3840,673.1 L3880,674.1 L3920,676.0 L3960,678.3 L4000,680.5 L4040,682.1 L4080,682.8 L4120,682.4 L4160,680.9 L4200,678.8 L4240,676.2 L4280,673.8 L4320,671.9 L4360,670.9 L4400,671.0 L4440,672.2 L4480,674.2 L4520,676.8 L4560,679.3 L4600,681.3 L4640,682.2 L4680,681.8 L4720,679.9 L4760,676.5 L4800,672.0 L4840,666.7 L4880,661.3 L4920,656.2 L4960,651.9 L5000,648.8 L5040,647.0 L5080,646.4 L5120,646.7 L5160,647.7 L5200,648.7 L5240,649.3 L5280,649.3 L5320,648.5 L5360,646.8 L5400,644.6 L5440,642.1 L5480,640.0 L5520,638.6 L5560,638.5 L5600,639.9 L5640,643.0 L5680,647.7 L5720,653.5 L5760,660.0 L5800,666.8 L5840,673.1 L5880,678.6 L5920,682.9 L5960,685.9 L6000,687.8 L6040,688.7 L6080,689.2 L6120,689.7 L6160,690.5 L6200,692.1 L6240,694.6 L6280,697.9 L6320,701.8 L6360,705.9 L6400,709.7 L6400,1000 Z" fill="#12211a"/></g>
 <rect x="-400" y="760" width="6800" height="240" fill="url(#jr-ground)"/>
 <line x1="1000" y1="760" x2="5050" y2="760" stroke="#e8d9b0" stroke-opacity=".28" stroke-width="3" stroke-dasharray="4 14" stroke-linecap="round"/>
 <line id="jr-trail" x1="1100" y1="760" x2="1100" y2="760" stroke="#35e08a" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+<clipPath id="jr-tickclip"><rect id="jr-tickrect" x="1095" y="760" width="0" height="60"/></clipPath>
+<g class="jr-ticks"><line x1="1100.0" y1="776" x2="1100.0" y2="794"/><line x1="1110.7" y1="776" x2="1110.7" y2="786"/><line x1="1121.4" y1="776" x2="1121.4" y2="786"/><line x1="1132.1" y1="776" x2="1132.1" y2="786"/><line x1="1142.7" y1="776" x2="1142.7" y2="786"/><line x1="1153.4" y1="776" x2="1153.4" y2="786"/><line x1="1164.1" y1="776" x2="1164.1" y2="786"/><line x1="1174.8" y1="776" x2="1174.8" y2="786"/><line x1="1185.5" y1="776" x2="1185.5" y2="786"/><line x1="1196.2" y1="776" x2="1196.2" y2="786"/><line x1="1206.8" y1="776" x2="1206.8" y2="786"/><line x1="1217.5" y1="776" x2="1217.5" y2="786"/><line x1="1228.2" y1="776" x2="1228.2" y2="786"/><line x1="1238.9" y1="776" x2="1238.9" y2="786"/><line x1="1249.6" y1="776" x2="1249.6" y2="786"/><line x1="1260.3" y1="776" x2="1260.3" y2="786"/><line x1="1271.0" y1="776" x2="1271.0" y2="786"/><line x1="1281.6" y1="776" x2="1281.6" y2="786"/><line x1="1292.3" y1="776" x2="1292.3" y2="786"/><line x1="1303.0" y1="776" x2="1303.0" y2="786"/><line x1="1313.7" y1="776" x2="1313.7" y2="786"/><line x1="1324.4" y1="776" x2="1324.4" y2="786"/><line x1="1335.1" y1="776" x2="1335.1" y2="786"/><line x1="1345.8" y1="776" x2="1345.8" y2="786"/><line x1="1356.4" y1="776" x2="1356.4" y2="786"/><line x1="1367.1" y1="776" x2="1367.1" y2="786"/><line x1="1377.8" y1="776" x2="1377.8" y2="786"/><line x1="1388.5" y1="776" x2="1388.5" y2="786"/><line x1="1399.2" y1="776" x2="1399.2" y2="786"/><line x1="1409.9" y1="776" x2="1409.9" y2="786"/><line x1="1420.5" y1="776" x2="1420.5" y2="786"/><line x1="1431.2" y1="776" x2="1431.2" y2="786"/><line x1="1441.9" y1="776" x2="1441.9" y2="786"/><line x1="1452.6" y1="776" x2="1452.6" y2="786"/><line x1="1463.3" y1="776" x2="1463.3" y2="786"/><line x1="1474.0" y1="776" x2="1474.0" y2="786"/><line x1="1484.7" y1="776" x2="1484.7" y2="786"/><line x1="1495.3" y1="776" x2="1495.3" y2="786"/><line x1="1506.0" y1="776" x2="1506.0" y2="786"/><line x1="1516.7" y1="776" x2="1516.7" y2="786"/><line x1="1527.4" y1="776" x2="1527.4" y2="786"/><line x1="1538.1" y1="776" x2="1538.1" y2="786"/><line x1="1548.8" y1="776" x2="1548.8" y2="786"/><line x1="1559.5" y1="776" x2="1559.5" y2="786"/><line x1="1570.1" y1="776" x2="1570.1" y2="786"/><line x1="1580.8" y1="776" x2="1580.8" y2="786"/><line x1="1591.5" y1="776" x2="1591.5" y2="786"/><line x1="1602.2" y1="776" x2="1602.2" y2="786"/><line x1="1612.9" y1="776" x2="1612.9" y2="786"/><line x1="1623.6" y1="776" x2="1623.6" y2="786"/><line x1="1634.2" y1="776" x2="1634.2" y2="786"/><line x1="1644.9" y1="776" x2="1644.9" y2="786"/><line x1="1655.6" y1="776" x2="1655.6" y2="786"/><line x1="1666.3" y1="776" x2="1666.3" y2="786"/><line x1="1677.0" y1="776" x2="1677.0" y2="786"/><line x1="1687.7" y1="776" x2="1687.7" y2="786"/><line x1="1698.4" y1="776" x2="1698.4" y2="786"/><line x1="1709.0" y1="776" x2="1709.0" y2="786"/><line x1="1719.7" y1="776" x2="1719.7" y2="786"/><line x1="1730.4" y1="776" x2="1730.4" y2="786"/><line x1="1741.1" y1="776" x2="1741.1" y2="786"/><line x1="1751.8" y1="776" x2="1751.8" y2="786"/><line x1="1762.5" y1="776" x2="1762.5" y2="786"/><line x1="1773.2" y1="776" x2="1773.2" y2="786"/><line x1="1783.8" y1="776" x2="1783.8" y2="786"/><line x1="1794.5" y1="776" x2="1794.5" y2="786"/><line x1="1805.2" y1="776" x2="1805.2" y2="786"/><line x1="1815.9" y1="776" x2="1815.9" y2="786"/><line x1="1826.6" y1="776" x2="1826.6" y2="786"/><line x1="1837.3" y1="776" x2="1837.3" y2="786"/><line x1="1847.9" y1="776" x2="1847.9" y2="786"/><line x1="1858.6" y1="776" x2="1858.6" y2="786"/><line x1="1869.3" y1="776" x2="1869.3" y2="786"/><line x1="1880.0" y1="776" x2="1880.0" y2="794"/><line x1="1890.7" y1="776" x2="1890.7" y2="786"/><line x1="1901.4" y1="776" x2="1901.4" y2="786"/><line x1="1912.1" y1="776" x2="1912.1" y2="786"/><line x1="1922.7" y1="776" x2="1922.7" y2="786"/><line x1="1933.4" y1="776" x2="1933.4" y2="786"/><line x1="1944.1" y1="776" x2="1944.1" y2="786"/><line x1="1954.8" y1="776" x2="1954.8" y2="786"/><line x1="1965.5" y1="776" x2="1965.5" y2="786"/><line x1="1976.2" y1="776" x2="1976.2" y2="786"/><line x1="1986.8" y1="776" x2="1986.8" y2="786"/><line x1="1997.5" y1="776" x2="1997.5" y2="786"/><line x1="2008.2" y1="776" x2="2008.2" y2="786"/><line x1="2018.9" y1="776" x2="2018.9" y2="786"/><line x1="2029.6" y1="776" x2="2029.6" y2="786"/><line x1="2040.3" y1="776" x2="2040.3" y2="786"/><line x1="2051.0" y1="776" x2="2051.0" y2="786"/><line x1="2061.6" y1="776" x2="2061.6" y2="786"/><line x1="2072.3" y1="776" x2="2072.3" y2="786"/><line x1="2083.0" y1="776" x2="2083.0" y2="786"/><line x1="2093.7" y1="776" x2="2093.7" y2="786"/><line x1="2104.4" y1="776" x2="2104.4" y2="786"/><line x1="2115.1" y1="776" x2="2115.1" y2="786"/><line x1="2125.8" y1="776" x2="2125.8" y2="786"/><line x1="2136.4" y1="776" x2="2136.4" y2="786"/><line x1="2147.1" y1="776" x2="2147.1" y2="786"/><line x1="2157.8" y1="776" x2="2157.8" y2="786"/><line x1="2168.5" y1="776" x2="2168.5" y2="786"/><line x1="2179.2" y1="776" x2="2179.2" y2="786"/><line x1="2189.9" y1="776" x2="2189.9" y2="786"/><line x1="2200.5" y1="776" x2="2200.5" y2="786"/><line x1="2211.2" y1="776" x2="2211.2" y2="786"/><line x1="2221.9" y1="776" x2="2221.9" y2="786"/><line x1="2232.6" y1="776" x2="2232.6" y2="786"/><line x1="2243.3" y1="776" x2="2243.3" y2="786"/><line x1="2254.0" y1="776" x2="2254.0" y2="786"/><line x1="2264.7" y1="776" x2="2264.7" y2="786"/><line x1="2275.3" y1="776" x2="2275.3" y2="786"/><line x1="2286.0" y1="776" x2="2286.0" y2="786"/><line x1="2296.7" y1="776" x2="2296.7" y2="786"/><line x1="2307.4" y1="776" x2="2307.4" y2="786"/><line x1="2318.1" y1="776" x2="2318.1" y2="786"/><line x1="2328.8" y1="776" x2="2328.8" y2="786"/><line x1="2339.5" y1="776" x2="2339.5" y2="786"/><line x1="2350.1" y1="776" x2="2350.1" y2="786"/><line x1="2360.8" y1="776" x2="2360.8" y2="786"/><line x1="2371.5" y1="776" x2="2371.5" y2="786"/><line x1="2382.2" y1="776" x2="2382.2" y2="786"/><line x1="2392.9" y1="776" x2="2392.9" y2="786"/><line x1="2403.6" y1="776" x2="2403.6" y2="786"/><line x1="2414.2" y1="776" x2="2414.2" y2="786"/><line x1="2424.9" y1="776" x2="2424.9" y2="786"/><line x1="2435.6" y1="776" x2="2435.6" y2="786"/><line x1="2446.3" y1="776" x2="2446.3" y2="786"/><line x1="2457.0" y1="776" x2="2457.0" y2="786"/><line x1="2467.7" y1="776" x2="2467.7" y2="786"/><line x1="2478.4" y1="776" x2="2478.4" y2="786"/><line x1="2489.0" y1="776" x2="2489.0" y2="786"/><line x1="2499.7" y1="776" x2="2499.7" y2="786"/><line x1="2510.4" y1="776" x2="2510.4" y2="786"/><line x1="2521.1" y1="776" x2="2521.1" y2="786"/><line x1="2531.8" y1="776" x2="2531.8" y2="786"/><line x1="2542.5" y1="776" x2="2542.5" y2="786"/><line x1="2553.2" y1="776" x2="2553.2" y2="786"/><line x1="2563.8" y1="776" x2="2563.8" y2="786"/><line x1="2574.5" y1="776" x2="2574.5" y2="786"/><line x1="2585.2" y1="776" x2="2585.2" y2="786"/><line x1="2595.9" y1="776" x2="2595.9" y2="786"/><line x1="2606.6" y1="776" x2="2606.6" y2="786"/><line x1="2617.3" y1="776" x2="2617.3" y2="786"/><line x1="2627.9" y1="776" x2="2627.9" y2="786"/><line x1="2638.6" y1="776" x2="2638.6" y2="786"/><line x1="2649.3" y1="776" x2="2649.3" y2="786"/><line x1="2660.0" y1="776" x2="2660.0" y2="794"/><line x1="2670.7" y1="776" x2="2670.7" y2="786"/><line x1="2681.4" y1="776" x2="2681.4" y2="786"/><line x1="2692.1" y1="776" x2="2692.1" y2="786"/><line x1="2702.7" y1="776" x2="2702.7" y2="786"/><line x1="2713.4" y1="776" x2="2713.4" y2="786"/><line x1="2724.1" y1="776" x2="2724.1" y2="786"/><line x1="2734.8" y1="776" x2="2734.8" y2="786"/><line x1="2745.5" y1="776" x2="2745.5" y2="786"/><line x1="2756.2" y1="776" x2="2756.2" y2="786"/><line x1="2766.8" y1="776" x2="2766.8" y2="786"/><line x1="2777.5" y1="776" x2="2777.5" y2="786"/><line x1="2788.2" y1="776" x2="2788.2" y2="786"/><line x1="2798.9" y1="776" x2="2798.9" y2="786"/><line x1="2809.6" y1="776" x2="2809.6" y2="786"/><line x1="2820.3" y1="776" x2="2820.3" y2="786"/><line x1="2831.0" y1="776" x2="2831.0" y2="786"/><line x1="2841.6" y1="776" x2="2841.6" y2="786"/><line x1="2852.3" y1="776" x2="2852.3" y2="786"/><line x1="2863.0" y1="776" x2="2863.0" y2="786"/><line x1="2873.7" y1="776" x2="2873.7" y2="786"/><line x1="2884.4" y1="776" x2="2884.4" y2="786"/><line x1="2895.1" y1="776" x2="2895.1" y2="786"/><line x1="2905.8" y1="776" x2="2905.8" y2="786"/><line x1="2916.4" y1="776" x2="2916.4" y2="786"/><line x1="2927.1" y1="776" x2="2927.1" y2="786"/><line x1="2937.8" y1="776" x2="2937.8" y2="786"/><line x1="2948.5" y1="776" x2="2948.5" y2="786"/><line x1="2959.2" y1="776" x2="2959.2" y2="786"/><line x1="2969.9" y1="776" x2="2969.9" y2="786"/><line x1="2980.5" y1="776" x2="2980.5" y2="786"/><line x1="2991.2" y1="776" x2="2991.2" y2="786"/><line x1="3001.9" y1="776" x2="3001.9" y2="786"/><line x1="3012.6" y1="776" x2="3012.6" y2="786"/><line x1="3023.3" y1="776" x2="3023.3" y2="786"/><line x1="3034.0" y1="776" x2="3034.0" y2="786"/><line x1="3044.7" y1="776" x2="3044.7" y2="786"/><line x1="3055.3" y1="776" x2="3055.3" y2="786"/><line x1="3066.0" y1="776" x2="3066.0" y2="786"/><line x1="3076.7" y1="776" x2="3076.7" y2="786"/><line x1="3087.4" y1="776" x2="3087.4" y2="786"/><line x1="3098.1" y1="776" x2="3098.1" y2="786"/><line x1="3108.8" y1="776" x2="3108.8" y2="786"/><line x1="3119.5" y1="776" x2="3119.5" y2="786"/><line x1="3130.1" y1="776" x2="3130.1" y2="786"/><line x1="3140.8" y1="776" x2="3140.8" y2="786"/><line x1="3151.5" y1="776" x2="3151.5" y2="786"/><line x1="3162.2" y1="776" x2="3162.2" y2="786"/><line x1="3172.9" y1="776" x2="3172.9" y2="786"/><line x1="3183.6" y1="776" x2="3183.6" y2="786"/><line x1="3194.2" y1="776" x2="3194.2" y2="786"/><line x1="3204.9" y1="776" x2="3204.9" y2="786"/><line x1="3215.6" y1="776" x2="3215.6" y2="786"/><line x1="3226.3" y1="776" x2="3226.3" y2="786"/><line x1="3237.0" y1="776" x2="3237.0" y2="786"/><line x1="3247.7" y1="776" x2="3247.7" y2="786"/><line x1="3258.4" y1="776" x2="3258.4" y2="786"/><line x1="3269.0" y1="776" x2="3269.0" y2="786"/><line x1="3279.7" y1="776" x2="3279.7" y2="786"/><line x1="3290.4" y1="776" x2="3290.4" y2="786"/><line x1="3301.1" y1="776" x2="3301.1" y2="786"/><line x1="3311.8" y1="776" x2="3311.8" y2="786"/><line x1="3322.5" y1="776" x2="3322.5" y2="786"/><line x1="3333.2" y1="776" x2="3333.2" y2="786"/><line x1="3343.8" y1="776" x2="3343.8" y2="786"/><line x1="3354.5" y1="776" x2="3354.5" y2="786"/><line x1="3365.2" y1="776" x2="3365.2" y2="786"/><line x1="3375.9" y1="776" x2="3375.9" y2="786"/><line x1="3386.6" y1="776" x2="3386.6" y2="786"/><line x1="3397.3" y1="776" x2="3397.3" y2="786"/><line x1="3407.9" y1="776" x2="3407.9" y2="786"/><line x1="3418.6" y1="776" x2="3418.6" y2="786"/><line x1="3429.3" y1="776" x2="3429.3" y2="786"/><line x1="3440.0" y1="776" x2="3440.0" y2="794"/><line x1="3450.7" y1="776" x2="3450.7" y2="786"/><line x1="3461.4" y1="776" x2="3461.4" y2="786"/><line x1="3472.1" y1="776" x2="3472.1" y2="786"/><line x1="3482.7" y1="776" x2="3482.7" y2="786"/><line x1="3493.4" y1="776" x2="3493.4" y2="786"/><line x1="3504.1" y1="776" x2="3504.1" y2="786"/><line x1="3514.8" y1="776" x2="3514.8" y2="786"/><line x1="3525.5" y1="776" x2="3525.5" y2="786"/><line x1="3536.2" y1="776" x2="3536.2" y2="786"/><line x1="3546.8" y1="776" x2="3546.8" y2="786"/><line x1="3557.5" y1="776" x2="3557.5" y2="786"/><line x1="3568.2" y1="776" x2="3568.2" y2="786"/><line x1="3578.9" y1="776" x2="3578.9" y2="786"/><line x1="3589.6" y1="776" x2="3589.6" y2="786"/><line x1="3600.3" y1="776" x2="3600.3" y2="786"/><line x1="3611.0" y1="776" x2="3611.0" y2="786"/><line x1="3621.6" y1="776" x2="3621.6" y2="786"/><line x1="3632.3" y1="776" x2="3632.3" y2="786"/><line x1="3643.0" y1="776" x2="3643.0" y2="786"/><line x1="3653.7" y1="776" x2="3653.7" y2="786"/><line x1="3664.4" y1="776" x2="3664.4" y2="786"/><line x1="3675.1" y1="776" x2="3675.1" y2="786"/><line x1="3685.8" y1="776" x2="3685.8" y2="786"/><line x1="3696.4" y1="776" x2="3696.4" y2="786"/><line x1="3707.1" y1="776" x2="3707.1" y2="786"/><line x1="3717.8" y1="776" x2="3717.8" y2="786"/><line x1="3728.5" y1="776" x2="3728.5" y2="786"/><line x1="3739.2" y1="776" x2="3739.2" y2="786"/><line x1="3749.9" y1="776" x2="3749.9" y2="786"/><line x1="3760.5" y1="776" x2="3760.5" y2="786"/><line x1="3771.2" y1="776" x2="3771.2" y2="786"/><line x1="3781.9" y1="776" x2="3781.9" y2="786"/><line x1="3792.6" y1="776" x2="3792.6" y2="786"/><line x1="3803.3" y1="776" x2="3803.3" y2="786"/><line x1="3814.0" y1="776" x2="3814.0" y2="786"/><line x1="3824.7" y1="776" x2="3824.7" y2="786"/><line x1="3835.3" y1="776" x2="3835.3" y2="786"/><line x1="3846.0" y1="776" x2="3846.0" y2="786"/><line x1="3856.7" y1="776" x2="3856.7" y2="786"/><line x1="3867.4" y1="776" x2="3867.4" y2="786"/><line x1="3878.1" y1="776" x2="3878.1" y2="786"/><line x1="3888.8" y1="776" x2="3888.8" y2="786"/><line x1="3899.5" y1="776" x2="3899.5" y2="786"/><line x1="3910.1" y1="776" x2="3910.1" y2="786"/><line x1="3920.8" y1="776" x2="3920.8" y2="786"/><line x1="3931.5" y1="776" x2="3931.5" y2="786"/><line x1="3942.2" y1="776" x2="3942.2" y2="786"/><line x1="3952.9" y1="776" x2="3952.9" y2="786"/><line x1="3963.6" y1="776" x2="3963.6" y2="786"/><line x1="3974.2" y1="776" x2="3974.2" y2="786"/><line x1="3984.9" y1="776" x2="3984.9" y2="786"/><line x1="3995.6" y1="776" x2="3995.6" y2="786"/><line x1="4006.3" y1="776" x2="4006.3" y2="786"/><line x1="4017.0" y1="776" x2="4017.0" y2="786"/><line x1="4027.7" y1="776" x2="4027.7" y2="786"/><line x1="4038.4" y1="776" x2="4038.4" y2="786"/><line x1="4049.0" y1="776" x2="4049.0" y2="786"/><line x1="4059.7" y1="776" x2="4059.7" y2="786"/><line x1="4070.4" y1="776" x2="4070.4" y2="786"/><line x1="4081.1" y1="776" x2="4081.1" y2="786"/><line x1="4091.8" y1="776" x2="4091.8" y2="786"/><line x1="4102.5" y1="776" x2="4102.5" y2="786"/><line x1="4113.2" y1="776" x2="4113.2" y2="786"/><line x1="4123.8" y1="776" x2="4123.8" y2="786"/><line x1="4134.5" y1="776" x2="4134.5" y2="786"/><line x1="4145.2" y1="776" x2="4145.2" y2="786"/><line x1="4155.9" y1="776" x2="4155.9" y2="786"/><line x1="4166.6" y1="776" x2="4166.6" y2="786"/><line x1="4177.3" y1="776" x2="4177.3" y2="786"/><line x1="4187.9" y1="776" x2="4187.9" y2="786"/><line x1="4198.6" y1="776" x2="4198.6" y2="786"/><line x1="4209.3" y1="776" x2="4209.3" y2="786"/><line x1="4220.0" y1="776" x2="4220.0" y2="794"/><line x1="4230.7" y1="776" x2="4230.7" y2="786"/><line x1="4241.4" y1="776" x2="4241.4" y2="786"/><line x1="4252.1" y1="776" x2="4252.1" y2="786"/><line x1="4262.7" y1="776" x2="4262.7" y2="786"/><line x1="4273.4" y1="776" x2="4273.4" y2="786"/><line x1="4284.1" y1="776" x2="4284.1" y2="786"/><line x1="4294.8" y1="776" x2="4294.8" y2="786"/><line x1="4305.5" y1="776" x2="4305.5" y2="786"/><line x1="4316.2" y1="776" x2="4316.2" y2="786"/><line x1="4326.8" y1="776" x2="4326.8" y2="786"/><line x1="4337.5" y1="776" x2="4337.5" y2="786"/><line x1="4348.2" y1="776" x2="4348.2" y2="786"/><line x1="4358.9" y1="776" x2="4358.9" y2="786"/><line x1="4369.6" y1="776" x2="4369.6" y2="786"/><line x1="4380.3" y1="776" x2="4380.3" y2="786"/><line x1="4391.0" y1="776" x2="4391.0" y2="786"/><line x1="4401.6" y1="776" x2="4401.6" y2="786"/><line x1="4412.3" y1="776" x2="4412.3" y2="786"/><line x1="4423.0" y1="776" x2="4423.0" y2="786"/><line x1="4433.7" y1="776" x2="4433.7" y2="786"/><line x1="4444.4" y1="776" x2="4444.4" y2="786"/><line x1="4455.1" y1="776" x2="4455.1" y2="786"/><line x1="4465.8" y1="776" x2="4465.8" y2="786"/><line x1="4476.4" y1="776" x2="4476.4" y2="786"/><line x1="4487.1" y1="776" x2="4487.1" y2="786"/><line x1="4497.8" y1="776" x2="4497.8" y2="786"/><line x1="4508.5" y1="776" x2="4508.5" y2="786"/><line x1="4519.2" y1="776" x2="4519.2" y2="786"/><line x1="4529.9" y1="776" x2="4529.9" y2="786"/><line x1="4540.5" y1="776" x2="4540.5" y2="786"/><line x1="4551.2" y1="776" x2="4551.2" y2="786"/><line x1="4561.9" y1="776" x2="4561.9" y2="786"/><line x1="4572.6" y1="776" x2="4572.6" y2="786"/><line x1="4583.3" y1="776" x2="4583.3" y2="786"/><line x1="4594.0" y1="776" x2="4594.0" y2="786"/><line x1="4604.7" y1="776" x2="4604.7" y2="786"/><line x1="4615.3" y1="776" x2="4615.3" y2="786"/><line x1="4626.0" y1="776" x2="4626.0" y2="786"/><line x1="4636.7" y1="776" x2="4636.7" y2="786"/><line x1="4647.4" y1="776" x2="4647.4" y2="786"/><line x1="4658.1" y1="776" x2="4658.1" y2="786"/><line x1="4668.8" y1="776" x2="4668.8" y2="786"/><line x1="4679.5" y1="776" x2="4679.5" y2="786"/><line x1="4690.1" y1="776" x2="4690.1" y2="786"/><line x1="4700.8" y1="776" x2="4700.8" y2="786"/><line x1="4711.5" y1="776" x2="4711.5" y2="786"/><line x1="4722.2" y1="776" x2="4722.2" y2="786"/><line x1="4732.9" y1="776" x2="4732.9" y2="786"/><line x1="4743.6" y1="776" x2="4743.6" y2="786"/><line x1="4754.2" y1="776" x2="4754.2" y2="786"/><line x1="4764.9" y1="776" x2="4764.9" y2="786"/><line x1="4775.6" y1="776" x2="4775.6" y2="786"/><line x1="4786.3" y1="776" x2="4786.3" y2="786"/><line x1="4797.0" y1="776" x2="4797.0" y2="786"/><line x1="4807.7" y1="776" x2="4807.7" y2="786"/><line x1="4818.4" y1="776" x2="4818.4" y2="786"/><line x1="4829.0" y1="776" x2="4829.0" y2="786"/><line x1="4839.7" y1="776" x2="4839.7" y2="786"/><line x1="4850.4" y1="776" x2="4850.4" y2="786"/><line x1="4861.1" y1="776" x2="4861.1" y2="786"/><line x1="4871.8" y1="776" x2="4871.8" y2="786"/><line x1="4882.5" y1="776" x2="4882.5" y2="786"/><line x1="4893.2" y1="776" x2="4893.2" y2="786"/><line x1="4903.8" y1="776" x2="4903.8" y2="786"/><line x1="4914.5" y1="776" x2="4914.5" y2="786"/><line x1="4925.2" y1="776" x2="4925.2" y2="786"/><line x1="4935.9" y1="776" x2="4935.9" y2="786"/><line x1="4946.6" y1="776" x2="4946.6" y2="786"/><line x1="4957.3" y1="776" x2="4957.3" y2="786"/><line x1="4967.9" y1="776" x2="4967.9" y2="786"/><line x1="4978.6" y1="776" x2="4978.6" y2="786"/><line x1="4989.3" y1="776" x2="4989.3" y2="786"/><line x1="5000.0" y1="776" x2="5000.0" y2="794"/></g>
+<g class="jr-ticks jr-ticks--on" clip-path="url(#jr-tickclip)"><line x1="1100.0" y1="776" x2="1100.0" y2="794"/><line x1="1110.7" y1="776" x2="1110.7" y2="786"/><line x1="1121.4" y1="776" x2="1121.4" y2="786"/><line x1="1132.1" y1="776" x2="1132.1" y2="786"/><line x1="1142.7" y1="776" x2="1142.7" y2="786"/><line x1="1153.4" y1="776" x2="1153.4" y2="786"/><line x1="1164.1" y1="776" x2="1164.1" y2="786"/><line x1="1174.8" y1="776" x2="1174.8" y2="786"/><line x1="1185.5" y1="776" x2="1185.5" y2="786"/><line x1="1196.2" y1="776" x2="1196.2" y2="786"/><line x1="1206.8" y1="776" x2="1206.8" y2="786"/><line x1="1217.5" y1="776" x2="1217.5" y2="786"/><line x1="1228.2" y1="776" x2="1228.2" y2="786"/><line x1="1238.9" y1="776" x2="1238.9" y2="786"/><line x1="1249.6" y1="776" x2="1249.6" y2="786"/><line x1="1260.3" y1="776" x2="1260.3" y2="786"/><line x1="1271.0" y1="776" x2="1271.0" y2="786"/><line x1="1281.6" y1="776" x2="1281.6" y2="786"/><line x1="1292.3" y1="776" x2="1292.3" y2="786"/><line x1="1303.0" y1="776" x2="1303.0" y2="786"/><line x1="1313.7" y1="776" x2="1313.7" y2="786"/><line x1="1324.4" y1="776" x2="1324.4" y2="786"/><line x1="1335.1" y1="776" x2="1335.1" y2="786"/><line x1="1345.8" y1="776" x2="1345.8" y2="786"/><line x1="1356.4" y1="776" x2="1356.4" y2="786"/><line x1="1367.1" y1="776" x2="1367.1" y2="786"/><line x1="1377.8" y1="776" x2="1377.8" y2="786"/><line x1="1388.5" y1="776" x2="1388.5" y2="786"/><line x1="1399.2" y1="776" x2="1399.2" y2="786"/><line x1="1409.9" y1="776" x2="1409.9" y2="786"/><line x1="1420.5" y1="776" x2="1420.5" y2="786"/><line x1="1431.2" y1="776" x2="1431.2" y2="786"/><line x1="1441.9" y1="776" x2="1441.9" y2="786"/><line x1="1452.6" y1="776" x2="1452.6" y2="786"/><line x1="1463.3" y1="776" x2="1463.3" y2="786"/><line x1="1474.0" y1="776" x2="1474.0" y2="786"/><line x1="1484.7" y1="776" x2="1484.7" y2="786"/><line x1="1495.3" y1="776" x2="1495.3" y2="786"/><line x1="1506.0" y1="776" x2="1506.0" y2="786"/><line x1="1516.7" y1="776" x2="1516.7" y2="786"/><line x1="1527.4" y1="776" x2="1527.4" y2="786"/><line x1="1538.1" y1="776" x2="1538.1" y2="786"/><line x1="1548.8" y1="776" x2="1548.8" y2="786"/><line x1="1559.5" y1="776" x2="1559.5" y2="786"/><line x1="1570.1" y1="776" x2="1570.1" y2="786"/><line x1="1580.8" y1="776" x2="1580.8" y2="786"/><line x1="1591.5" y1="776" x2="1591.5" y2="786"/><line x1="1602.2" y1="776" x2="1602.2" y2="786"/><line x1="1612.9" y1="776" x2="1612.9" y2="786"/><line x1="1623.6" y1="776" x2="1623.6" y2="786"/><line x1="1634.2" y1="776" x2="1634.2" y2="786"/><line x1="1644.9" y1="776" x2="1644.9" y2="786"/><line x1="1655.6" y1="776" x2="1655.6" y2="786"/><line x1="1666.3" y1="776" x2="1666.3" y2="786"/><line x1="1677.0" y1="776" x2="1677.0" y2="786"/><line x1="1687.7" y1="776" x2="1687.7" y2="786"/><line x1="1698.4" y1="776" x2="1698.4" y2="786"/><line x1="1709.0" y1="776" x2="1709.0" y2="786"/><line x1="1719.7" y1="776" x2="1719.7" y2="786"/><line x1="1730.4" y1="776" x2="1730.4" y2="786"/><line x1="1741.1" y1="776" x2="1741.1" y2="786"/><line x1="1751.8" y1="776" x2="1751.8" y2="786"/><line x1="1762.5" y1="776" x2="1762.5" y2="786"/><line x1="1773.2" y1="776" x2="1773.2" y2="786"/><line x1="1783.8" y1="776" x2="1783.8" y2="786"/><line x1="1794.5" y1="776" x2="1794.5" y2="786"/><line x1="1805.2" y1="776" x2="1805.2" y2="786"/><line x1="1815.9" y1="776" x2="1815.9" y2="786"/><line x1="1826.6" y1="776" x2="1826.6" y2="786"/><line x1="1837.3" y1="776" x2="1837.3" y2="786"/><line x1="1847.9" y1="776" x2="1847.9" y2="786"/><line x1="1858.6" y1="776" x2="1858.6" y2="786"/><line x1="1869.3" y1="776" x2="1869.3" y2="786"/><line x1="1880.0" y1="776" x2="1880.0" y2="794"/><line x1="1890.7" y1="776" x2="1890.7" y2="786"/><line x1="1901.4" y1="776" x2="1901.4" y2="786"/><line x1="1912.1" y1="776" x2="1912.1" y2="786"/><line x1="1922.7" y1="776" x2="1922.7" y2="786"/><line x1="1933.4" y1="776" x2="1933.4" y2="786"/><line x1="1944.1" y1="776" x2="1944.1" y2="786"/><line x1="1954.8" y1="776" x2="1954.8" y2="786"/><line x1="1965.5" y1="776" x2="1965.5" y2="786"/><line x1="1976.2" y1="776" x2="1976.2" y2="786"/><line x1="1986.8" y1="776" x2="1986.8" y2="786"/><line x1="1997.5" y1="776" x2="1997.5" y2="786"/><line x1="2008.2" y1="776" x2="2008.2" y2="786"/><line x1="2018.9" y1="776" x2="2018.9" y2="786"/><line x1="2029.6" y1="776" x2="2029.6" y2="786"/><line x1="2040.3" y1="776" x2="2040.3" y2="786"/><line x1="2051.0" y1="776" x2="2051.0" y2="786"/><line x1="2061.6" y1="776" x2="2061.6" y2="786"/><line x1="2072.3" y1="776" x2="2072.3" y2="786"/><line x1="2083.0" y1="776" x2="2083.0" y2="786"/><line x1="2093.7" y1="776" x2="2093.7" y2="786"/><line x1="2104.4" y1="776" x2="2104.4" y2="786"/><line x1="2115.1" y1="776" x2="2115.1" y2="786"/><line x1="2125.8" y1="776" x2="2125.8" y2="786"/><line x1="2136.4" y1="776" x2="2136.4" y2="786"/><line x1="2147.1" y1="776" x2="2147.1" y2="786"/><line x1="2157.8" y1="776" x2="2157.8" y2="786"/><line x1="2168.5" y1="776" x2="2168.5" y2="786"/><line x1="2179.2" y1="776" x2="2179.2" y2="786"/><line x1="2189.9" y1="776" x2="2189.9" y2="786"/><line x1="2200.5" y1="776" x2="2200.5" y2="786"/><line x1="2211.2" y1="776" x2="2211.2" y2="786"/><line x1="2221.9" y1="776" x2="2221.9" y2="786"/><line x1="2232.6" y1="776" x2="2232.6" y2="786"/><line x1="2243.3" y1="776" x2="2243.3" y2="786"/><line x1="2254.0" y1="776" x2="2254.0" y2="786"/><line x1="2264.7" y1="776" x2="2264.7" y2="786"/><line x1="2275.3" y1="776" x2="2275.3" y2="786"/><line x1="2286.0" y1="776" x2="2286.0" y2="786"/><line x1="2296.7" y1="776" x2="2296.7" y2="786"/><line x1="2307.4" y1="776" x2="2307.4" y2="786"/><line x1="2318.1" y1="776" x2="2318.1" y2="786"/><line x1="2328.8" y1="776" x2="2328.8" y2="786"/><line x1="2339.5" y1="776" x2="2339.5" y2="786"/><line x1="2350.1" y1="776" x2="2350.1" y2="786"/><line x1="2360.8" y1="776" x2="2360.8" y2="786"/><line x1="2371.5" y1="776" x2="2371.5" y2="786"/><line x1="2382.2" y1="776" x2="2382.2" y2="786"/><line x1="2392.9" y1="776" x2="2392.9" y2="786"/><line x1="2403.6" y1="776" x2="2403.6" y2="786"/><line x1="2414.2" y1="776" x2="2414.2" y2="786"/><line x1="2424.9" y1="776" x2="2424.9" y2="786"/><line x1="2435.6" y1="776" x2="2435.6" y2="786"/><line x1="2446.3" y1="776" x2="2446.3" y2="786"/><line x1="2457.0" y1="776" x2="2457.0" y2="786"/><line x1="2467.7" y1="776" x2="2467.7" y2="786"/><line x1="2478.4" y1="776" x2="2478.4" y2="786"/><line x1="2489.0" y1="776" x2="2489.0" y2="786"/><line x1="2499.7" y1="776" x2="2499.7" y2="786"/><line x1="2510.4" y1="776" x2="2510.4" y2="786"/><line x1="2521.1" y1="776" x2="2521.1" y2="786"/><line x1="2531.8" y1="776" x2="2531.8" y2="786"/><line x1="2542.5" y1="776" x2="2542.5" y2="786"/><line x1="2553.2" y1="776" x2="2553.2" y2="786"/><line x1="2563.8" y1="776" x2="2563.8" y2="786"/><line x1="2574.5" y1="776" x2="2574.5" y2="786"/><line x1="2585.2" y1="776" x2="2585.2" y2="786"/><line x1="2595.9" y1="776" x2="2595.9" y2="786"/><line x1="2606.6" y1="776" x2="2606.6" y2="786"/><line x1="2617.3" y1="776" x2="2617.3" y2="786"/><line x1="2627.9" y1="776" x2="2627.9" y2="786"/><line x1="2638.6" y1="776" x2="2638.6" y2="786"/><line x1="2649.3" y1="776" x2="2649.3" y2="786"/><line x1="2660.0" y1="776" x2="2660.0" y2="794"/><line x1="2670.7" y1="776" x2="2670.7" y2="786"/><line x1="2681.4" y1="776" x2="2681.4" y2="786"/><line x1="2692.1" y1="776" x2="2692.1" y2="786"/><line x1="2702.7" y1="776" x2="2702.7" y2="786"/><line x1="2713.4" y1="776" x2="2713.4" y2="786"/><line x1="2724.1" y1="776" x2="2724.1" y2="786"/><line x1="2734.8" y1="776" x2="2734.8" y2="786"/><line x1="2745.5" y1="776" x2="2745.5" y2="786"/><line x1="2756.2" y1="776" x2="2756.2" y2="786"/><line x1="2766.8" y1="776" x2="2766.8" y2="786"/><line x1="2777.5" y1="776" x2="2777.5" y2="786"/><line x1="2788.2" y1="776" x2="2788.2" y2="786"/><line x1="2798.9" y1="776" x2="2798.9" y2="786"/><line x1="2809.6" y1="776" x2="2809.6" y2="786"/><line x1="2820.3" y1="776" x2="2820.3" y2="786"/><line x1="2831.0" y1="776" x2="2831.0" y2="786"/><line x1="2841.6" y1="776" x2="2841.6" y2="786"/><line x1="2852.3" y1="776" x2="2852.3" y2="786"/><line x1="2863.0" y1="776" x2="2863.0" y2="786"/><line x1="2873.7" y1="776" x2="2873.7" y2="786"/><line x1="2884.4" y1="776" x2="2884.4" y2="786"/><line x1="2895.1" y1="776" x2="2895.1" y2="786"/><line x1="2905.8" y1="776" x2="2905.8" y2="786"/><line x1="2916.4" y1="776" x2="2916.4" y2="786"/><line x1="2927.1" y1="776" x2="2927.1" y2="786"/><line x1="2937.8" y1="776" x2="2937.8" y2="786"/><line x1="2948.5" y1="776" x2="2948.5" y2="786"/><line x1="2959.2" y1="776" x2="2959.2" y2="786"/><line x1="2969.9" y1="776" x2="2969.9" y2="786"/><line x1="2980.5" y1="776" x2="2980.5" y2="786"/><line x1="2991.2" y1="776" x2="2991.2" y2="786"/><line x1="3001.9" y1="776" x2="3001.9" y2="786"/><line x1="3012.6" y1="776" x2="3012.6" y2="786"/><line x1="3023.3" y1="776" x2="3023.3" y2="786"/><line x1="3034.0" y1="776" x2="3034.0" y2="786"/><line x1="3044.7" y1="776" x2="3044.7" y2="786"/><line x1="3055.3" y1="776" x2="3055.3" y2="786"/><line x1="3066.0" y1="776" x2="3066.0" y2="786"/><line x1="3076.7" y1="776" x2="3076.7" y2="786"/><line x1="3087.4" y1="776" x2="3087.4" y2="786"/><line x1="3098.1" y1="776" x2="3098.1" y2="786"/><line x1="3108.8" y1="776" x2="3108.8" y2="786"/><line x1="3119.5" y1="776" x2="3119.5" y2="786"/><line x1="3130.1" y1="776" x2="3130.1" y2="786"/><line x1="3140.8" y1="776" x2="3140.8" y2="786"/><line x1="3151.5" y1="776" x2="3151.5" y2="786"/><line x1="3162.2" y1="776" x2="3162.2" y2="786"/><line x1="3172.9" y1="776" x2="3172.9" y2="786"/><line x1="3183.6" y1="776" x2="3183.6" y2="786"/><line x1="3194.2" y1="776" x2="3194.2" y2="786"/><line x1="3204.9" y1="776" x2="3204.9" y2="786"/><line x1="3215.6" y1="776" x2="3215.6" y2="786"/><line x1="3226.3" y1="776" x2="3226.3" y2="786"/><line x1="3237.0" y1="776" x2="3237.0" y2="786"/><line x1="3247.7" y1="776" x2="3247.7" y2="786"/><line x1="3258.4" y1="776" x2="3258.4" y2="786"/><line x1="3269.0" y1="776" x2="3269.0" y2="786"/><line x1="3279.7" y1="776" x2="3279.7" y2="786"/><line x1="3290.4" y1="776" x2="3290.4" y2="786"/><line x1="3301.1" y1="776" x2="3301.1" y2="786"/><line x1="3311.8" y1="776" x2="3311.8" y2="786"/><line x1="3322.5" y1="776" x2="3322.5" y2="786"/><line x1="3333.2" y1="776" x2="3333.2" y2="786"/><line x1="3343.8" y1="776" x2="3343.8" y2="786"/><line x1="3354.5" y1="776" x2="3354.5" y2="786"/><line x1="3365.2" y1="776" x2="3365.2" y2="786"/><line x1="3375.9" y1="776" x2="3375.9" y2="786"/><line x1="3386.6" y1="776" x2="3386.6" y2="786"/><line x1="3397.3" y1="776" x2="3397.3" y2="786"/><line x1="3407.9" y1="776" x2="3407.9" y2="786"/><line x1="3418.6" y1="776" x2="3418.6" y2="786"/><line x1="3429.3" y1="776" x2="3429.3" y2="786"/><line x1="3440.0" y1="776" x2="3440.0" y2="794"/><line x1="3450.7" y1="776" x2="3450.7" y2="786"/><line x1="3461.4" y1="776" x2="3461.4" y2="786"/><line x1="3472.1" y1="776" x2="3472.1" y2="786"/><line x1="3482.7" y1="776" x2="3482.7" y2="786"/><line x1="3493.4" y1="776" x2="3493.4" y2="786"/><line x1="3504.1" y1="776" x2="3504.1" y2="786"/><line x1="3514.8" y1="776" x2="3514.8" y2="786"/><line x1="3525.5" y1="776" x2="3525.5" y2="786"/><line x1="3536.2" y1="776" x2="3536.2" y2="786"/><line x1="3546.8" y1="776" x2="3546.8" y2="786"/><line x1="3557.5" y1="776" x2="3557.5" y2="786"/><line x1="3568.2" y1="776" x2="3568.2" y2="786"/><line x1="3578.9" y1="776" x2="3578.9" y2="786"/><line x1="3589.6" y1="776" x2="3589.6" y2="786"/><line x1="3600.3" y1="776" x2="3600.3" y2="786"/><line x1="3611.0" y1="776" x2="3611.0" y2="786"/><line x1="3621.6" y1="776" x2="3621.6" y2="786"/><line x1="3632.3" y1="776" x2="3632.3" y2="786"/><line x1="3643.0" y1="776" x2="3643.0" y2="786"/><line x1="3653.7" y1="776" x2="3653.7" y2="786"/><line x1="3664.4" y1="776" x2="3664.4" y2="786"/><line x1="3675.1" y1="776" x2="3675.1" y2="786"/><line x1="3685.8" y1="776" x2="3685.8" y2="786"/><line x1="3696.4" y1="776" x2="3696.4" y2="786"/><line x1="3707.1" y1="776" x2="3707.1" y2="786"/><line x1="3717.8" y1="776" x2="3717.8" y2="786"/><line x1="3728.5" y1="776" x2="3728.5" y2="786"/><line x1="3739.2" y1="776" x2="3739.2" y2="786"/><line x1="3749.9" y1="776" x2="3749.9" y2="786"/><line x1="3760.5" y1="776" x2="3760.5" y2="786"/><line x1="3771.2" y1="776" x2="3771.2" y2="786"/><line x1="3781.9" y1="776" x2="3781.9" y2="786"/><line x1="3792.6" y1="776" x2="3792.6" y2="786"/><line x1="3803.3" y1="776" x2="3803.3" y2="786"/><line x1="3814.0" y1="776" x2="3814.0" y2="786"/><line x1="3824.7" y1="776" x2="3824.7" y2="786"/><line x1="3835.3" y1="776" x2="3835.3" y2="786"/><line x1="3846.0" y1="776" x2="3846.0" y2="786"/><line x1="3856.7" y1="776" x2="3856.7" y2="786"/><line x1="3867.4" y1="776" x2="3867.4" y2="786"/><line x1="3878.1" y1="776" x2="3878.1" y2="786"/><line x1="3888.8" y1="776" x2="3888.8" y2="786"/><line x1="3899.5" y1="776" x2="3899.5" y2="786"/><line x1="3910.1" y1="776" x2="3910.1" y2="786"/><line x1="3920.8" y1="776" x2="3920.8" y2="786"/><line x1="3931.5" y1="776" x2="3931.5" y2="786"/><line x1="3942.2" y1="776" x2="3942.2" y2="786"/><line x1="3952.9" y1="776" x2="3952.9" y2="786"/><line x1="3963.6" y1="776" x2="3963.6" y2="786"/><line x1="3974.2" y1="776" x2="3974.2" y2="786"/><line x1="3984.9" y1="776" x2="3984.9" y2="786"/><line x1="3995.6" y1="776" x2="3995.6" y2="786"/><line x1="4006.3" y1="776" x2="4006.3" y2="786"/><line x1="4017.0" y1="776" x2="4017.0" y2="786"/><line x1="4027.7" y1="776" x2="4027.7" y2="786"/><line x1="4038.4" y1="776" x2="4038.4" y2="786"/><line x1="4049.0" y1="776" x2="4049.0" y2="786"/><line x1="4059.7" y1="776" x2="4059.7" y2="786"/><line x1="4070.4" y1="776" x2="4070.4" y2="786"/><line x1="4081.1" y1="776" x2="4081.1" y2="786"/><line x1="4091.8" y1="776" x2="4091.8" y2="786"/><line x1="4102.5" y1="776" x2="4102.5" y2="786"/><line x1="4113.2" y1="776" x2="4113.2" y2="786"/><line x1="4123.8" y1="776" x2="4123.8" y2="786"/><line x1="4134.5" y1="776" x2="4134.5" y2="786"/><line x1="4145.2" y1="776" x2="4145.2" y2="786"/><line x1="4155.9" y1="776" x2="4155.9" y2="786"/><line x1="4166.6" y1="776" x2="4166.6" y2="786"/><line x1="4177.3" y1="776" x2="4177.3" y2="786"/><line x1="4187.9" y1="776" x2="4187.9" y2="786"/><line x1="4198.6" y1="776" x2="4198.6" y2="786"/><line x1="4209.3" y1="776" x2="4209.3" y2="786"/><line x1="4220.0" y1="776" x2="4220.0" y2="794"/><line x1="4230.7" y1="776" x2="4230.7" y2="786"/><line x1="4241.4" y1="776" x2="4241.4" y2="786"/><line x1="4252.1" y1="776" x2="4252.1" y2="786"/><line x1="4262.7" y1="776" x2="4262.7" y2="786"/><line x1="4273.4" y1="776" x2="4273.4" y2="786"/><line x1="4284.1" y1="776" x2="4284.1" y2="786"/><line x1="4294.8" y1="776" x2="4294.8" y2="786"/><line x1="4305.5" y1="776" x2="4305.5" y2="786"/><line x1="4316.2" y1="776" x2="4316.2" y2="786"/><line x1="4326.8" y1="776" x2="4326.8" y2="786"/><line x1="4337.5" y1="776" x2="4337.5" y2="786"/><line x1="4348.2" y1="776" x2="4348.2" y2="786"/><line x1="4358.9" y1="776" x2="4358.9" y2="786"/><line x1="4369.6" y1="776" x2="4369.6" y2="786"/><line x1="4380.3" y1="776" x2="4380.3" y2="786"/><line x1="4391.0" y1="776" x2="4391.0" y2="786"/><line x1="4401.6" y1="776" x2="4401.6" y2="786"/><line x1="4412.3" y1="776" x2="4412.3" y2="786"/><line x1="4423.0" y1="776" x2="4423.0" y2="786"/><line x1="4433.7" y1="776" x2="4433.7" y2="786"/><line x1="4444.4" y1="776" x2="4444.4" y2="786"/><line x1="4455.1" y1="776" x2="4455.1" y2="786"/><line x1="4465.8" y1="776" x2="4465.8" y2="786"/><line x1="4476.4" y1="776" x2="4476.4" y2="786"/><line x1="4487.1" y1="776" x2="4487.1" y2="786"/><line x1="4497.8" y1="776" x2="4497.8" y2="786"/><line x1="4508.5" y1="776" x2="4508.5" y2="786"/><line x1="4519.2" y1="776" x2="4519.2" y2="786"/><line x1="4529.9" y1="776" x2="4529.9" y2="786"/><line x1="4540.5" y1="776" x2="4540.5" y2="786"/><line x1="4551.2" y1="776" x2="4551.2" y2="786"/><line x1="4561.9" y1="776" x2="4561.9" y2="786"/><line x1="4572.6" y1="776" x2="4572.6" y2="786"/><line x1="4583.3" y1="776" x2="4583.3" y2="786"/><line x1="4594.0" y1="776" x2="4594.0" y2="786"/><line x1="4604.7" y1="776" x2="4604.7" y2="786"/><line x1="4615.3" y1="776" x2="4615.3" y2="786"/><line x1="4626.0" y1="776" x2="4626.0" y2="786"/><line x1="4636.7" y1="776" x2="4636.7" y2="786"/><line x1="4647.4" y1="776" x2="4647.4" y2="786"/><line x1="4658.1" y1="776" x2="4658.1" y2="786"/><line x1="4668.8" y1="776" x2="4668.8" y2="786"/><line x1="4679.5" y1="776" x2="4679.5" y2="786"/><line x1="4690.1" y1="776" x2="4690.1" y2="786"/><line x1="4700.8" y1="776" x2="4700.8" y2="786"/><line x1="4711.5" y1="776" x2="4711.5" y2="786"/><line x1="4722.2" y1="776" x2="4722.2" y2="786"/><line x1="4732.9" y1="776" x2="4732.9" y2="786"/><line x1="4743.6" y1="776" x2="4743.6" y2="786"/><line x1="4754.2" y1="776" x2="4754.2" y2="786"/><line x1="4764.9" y1="776" x2="4764.9" y2="786"/><line x1="4775.6" y1="776" x2="4775.6" y2="786"/><line x1="4786.3" y1="776" x2="4786.3" y2="786"/><line x1="4797.0" y1="776" x2="4797.0" y2="786"/><line x1="4807.7" y1="776" x2="4807.7" y2="786"/><line x1="4818.4" y1="776" x2="4818.4" y2="786"/><line x1="4829.0" y1="776" x2="4829.0" y2="786"/><line x1="4839.7" y1="776" x2="4839.7" y2="786"/><line x1="4850.4" y1="776" x2="4850.4" y2="786"/><line x1="4861.1" y1="776" x2="4861.1" y2="786"/><line x1="4871.8" y1="776" x2="4871.8" y2="786"/><line x1="4882.5" y1="776" x2="4882.5" y2="786"/><line x1="4893.2" y1="776" x2="4893.2" y2="786"/><line x1="4903.8" y1="776" x2="4903.8" y2="786"/><line x1="4914.5" y1="776" x2="4914.5" y2="786"/><line x1="4925.2" y1="776" x2="4925.2" y2="786"/><line x1="4935.9" y1="776" x2="4935.9" y2="786"/><line x1="4946.6" y1="776" x2="4946.6" y2="786"/><line x1="4957.3" y1="776" x2="4957.3" y2="786"/><line x1="4967.9" y1="776" x2="4967.9" y2="786"/><line x1="4978.6" y1="776" x2="4978.6" y2="786"/><line x1="4989.3" y1="776" x2="4989.3" y2="786"/><line x1="5000.0" y1="776" x2="5000.0" y2="794"/></g>
 <g class="jr-lab">
 <rect x="360" y="370" width="660" height="390" fill="#040a07"/>
 <path d="M340 372 L690 300 L1040 372 Z" fill="#040a07"/>
@@ -520,18 +475,11 @@
 <text x="690" y="410" text-anchor="middle" class="jr-sign">UNIVERSITY LAB</text>
 </g>
 <g class="jr-posts">
-<g class="jr-post" data-y="1"><line x1="1425" y1="760" x2="1425" y2="714"/><circle cx="1425" cy="710" r="5"/><text x="1425" y="692" text-anchor="middle" class="jr-yr">YEAR 1</text><text x="1425" y="806" text-anchor="middle" class="jr-step">Published</text></g>
-<g class="jr-post" data-y="2"><line x1="1750" y1="760" x2="1750" y2="714"/><circle cx="1750" cy="710" r="5"/><text x="1750" y="692" text-anchor="middle" class="jr-yr">YEAR 2</text></g>
-<g class="jr-post" data-y="3"><line x1="2075" y1="760" x2="2075" y2="714"/><circle cx="2075" cy="710" r="5"/><text x="2075" y="692" text-anchor="middle" class="jr-yr">YEAR 3</text><text x="2075" y="806" text-anchor="middle" class="jr-step">Greenhouse trials</text></g>
-<g class="jr-post" data-y="4"><line x1="2400" y1="760" x2="2400" y2="714"/><circle cx="2400" cy="710" r="5"/><text x="2400" y="692" text-anchor="middle" class="jr-yr">YEAR 4</text></g>
-<g class="jr-post" data-y="5"><line x1="2725" y1="760" x2="2725" y2="714"/><circle cx="2725" cy="710" r="5"/><text x="2725" y="692" text-anchor="middle" class="jr-yr">YEAR 5</text><text x="2725" y="806" text-anchor="middle" class="jr-step">Field trials</text></g>
-<g class="jr-post" data-y="6"><line x1="3050" y1="760" x2="3050" y2="714"/><circle cx="3050" cy="710" r="5"/><text x="3050" y="692" text-anchor="middle" class="jr-yr">YEAR 6</text></g>
-<g class="jr-post" data-y="7"><line x1="3375" y1="760" x2="3375" y2="714"/><circle cx="3375" cy="710" r="5"/><text x="3375" y="692" text-anchor="middle" class="jr-yr">YEAR 7</text><text x="3375" y="806" text-anchor="middle" class="jr-step">Formulation</text></g>
-<g class="jr-post" data-y="8"><line x1="3700" y1="760" x2="3700" y2="714"/><circle cx="3700" cy="710" r="5"/><text x="3700" y="692" text-anchor="middle" class="jr-yr">YEAR 8</text></g>
-<g class="jr-post" data-y="9"><line x1="4025" y1="760" x2="4025" y2="714"/><circle cx="4025" cy="710" r="5"/><text x="4025" y="692" text-anchor="middle" class="jr-yr">YEAR 9</text><text x="4025" y="806" text-anchor="middle" class="jr-step">Safety review</text></g>
-<g class="jr-post" data-y="10"><line x1="4350" y1="760" x2="4350" y2="714"/><circle cx="4350" cy="710" r="5"/><text x="4350" y="692" text-anchor="middle" class="jr-yr">YEAR 10</text><text x="4350" y="806" text-anchor="middle" class="jr-step">Registration</text></g>
-<g class="jr-post" data-y="11"><line x1="4675" y1="760" x2="4675" y2="714"/><circle cx="4675" cy="710" r="5"/><text x="4675" y="692" text-anchor="middle" class="jr-yr">YEAR 11</text><text x="4675" y="806" text-anchor="middle" class="jr-step">Manufacturing</text></g>
-<g class="jr-post" data-y="12"><line x1="5000" y1="760" x2="5000" y2="714"/><circle cx="5000" cy="710" r="5"/><text x="5000" y="692" text-anchor="middle" class="jr-yr">YEAR 12</text><text x="5000" y="806" text-anchor="middle" class="jr-step">On a farm shop shelf</text></g>
+<g class="jr-post" data-y="1"><line x1="1880" y1="760" x2="1880" y2="714"/><circle cx="1880" cy="710" r="5"/><text x="1880" y="692" text-anchor="middle" class="jr-yr">YEAR 1</text><text x="1880" y="832" text-anchor="middle" class="jr-step">Lab efficacy</text></g>
+<g class="jr-post" data-y="2"><line x1="2660" y1="760" x2="2660" y2="714"/><circle cx="2660" cy="710" r="5"/><text x="2660" y="692" text-anchor="middle" class="jr-yr">YEAR 2</text><text x="2660" y="832" text-anchor="middle" class="jr-step">Greenhouse trials</text></g>
+<g class="jr-post" data-y="3"><line x1="3440" y1="760" x2="3440" y2="714"/><circle cx="3440" cy="710" r="5"/><text x="3440" y="692" text-anchor="middle" class="jr-yr">YEAR 3</text><text x="3440" y="832" text-anchor="middle" class="jr-step">Field trials</text></g>
+<g class="jr-post" data-y="4"><line x1="4220" y1="760" x2="4220" y2="714"/><circle cx="4220" cy="710" r="5"/><text x="4220" y="692" text-anchor="middle" class="jr-yr">YEAR 4</text><text x="4220" y="832" text-anchor="middle" class="jr-step">Scale-up and registration</text></g>
+<g class="jr-post" data-y="5"><line x1="5000" y1="760" x2="5000" y2="714"/><circle cx="5000" cy="710" r="5"/><text x="5000" y="692" text-anchor="middle" class="jr-yr">YEAR 5</text><text x="5000" y="832" text-anchor="middle" class="jr-step">On a farm shop shelf</text></g>
 </g>
 <g class="jr-shop"><rect x="4940" y="640" width="120" height="120" fill="#1f1810"/><rect x="4930" y="626" width="140" height="16" fill="#2b2216"/><rect x="4956" y="664" width="88" height="6" fill="#6b5536"/><rect x="4956" y="702" width="88" height="6" fill="#6b5536"/><rect x="4962" y="648" width="12" height="16" fill="#c9a36a"/><rect x="4980" y="650" width="12" height="14" fill="#c9a36a"/><rect x="5010" y="686" width="12" height="16" fill="#c9a36a"/></g>
 <g class="jr-farm">
@@ -603,32 +551,34 @@
         </div>
 
         <div class="jr-hud" aria-hidden="true">
-          <div class="jr-hud__year"><span>Year</span><b id="jr-year">12</b></div>
+          <div class="jr-hud__year"><span>Year</span><b id="jr-year">5</b></div>
           <div class="jr-hud__farmer">
-            <p class="jr-hud__who">A farmer who was 63 the year it was discovered</p>
-            <div class="jr-hud__row"><span>Her age now</span><b id="jr-age">75</b></div>
-            <div class="jr-hud__row"><span>Summers farmed without it</span><b id="jr-summers">12</b></div>
+            <div class="jr-hud__row"><span>Five-day windows passed</span><b id="jr-windows">365</b></div>
+            <div class="jr-hud__row"><span>Age of a farmer who was 63 at the start</span><b id="jr-age">68</b></div>
           </div>
         </div>
 
-        <p class="jr-end" id="jr-end">When it finally reaches her shelf, she is 75.
-        What she can buy today left a lab when she was about 51.</p>
-        <p class="jr-note">An illustrative twelve-year path. Many take longer.</p>
+        <p class="jr-end" id="jr-end">It reaches the shelf after 365 five-day
+        windows. A flash drought needs one.</p>
+        <p class="jr-note">Stages in typical order; total duration from ref.&nbsp;5.</p>
       </div>
       <div class="jr-runway" aria-hidden="true"></div>
     </div>
-    <p class="visually-hidden">Illustration: a new protectant is discovered in a
-    university lab at night and travels for twelve years through publication,
-    greenhouse and field trials, formulation, safety review, registration and
-    manufacturing before it reaches a farm shop shelf at dawn. A farmer who was
-    63 when it was discovered is 75 when it arrives.</p>
+    <p class="visually-hidden">Illustration: a new biological is discovered in a
+    university lab at night and passes through lab efficacy tests, greenhouse
+    trials, field trials, scale-up and registration before reaching a farm shop
+    shelf five years later, at dawn. 365 five-day windows pass on the way. A
+    farmer who was 63 at the start is 68 when it arrives.</p>
 
-    <div class="pb-inner">
-      <div class="pb-earns pb-earns--dark">
-        <p class="pb-earns__label">The farmer needs</p>
-        <ul class="pb-earns__list">
-          <li class="pb-tag">The newest science, sooner</li>
-        </ul>
+    <div class="jr-after">
+      <div class="pb-inner">
+        <div class="pb-earns">
+          <p class="pb-earns__label">Protection has to come with</p>
+          <ul class="pb-earns__list">
+            <li class="pb-tag">A shorter wait</li>
+            <li class="pb-tag">Control in farmers&rsquo; hands</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -638,7 +588,7 @@
   <div class="pb-stagewrap" id="chain">
     <div class="pb-stage">
       <div class="pb-chainhead">
-        <p class="kicker">The problem</p>
+        <p class="pb-kicker">The problem</p>
         <h2>Protection exists. Getting it to the field takes time.</h2>
       </div>
 
@@ -657,7 +607,7 @@
         </ol>
       </div>
 
-      <p class="pb-chainfoot"><span>Six of the nine steps happen before a farmer is involved.</span></p>
+      <p class="pb-chainfoot">Six of the nine steps happen before a farmer is involved.</p>
 
       <div class="pb-spark" aria-hidden="true"></div>
 
@@ -666,7 +616,7 @@
         <h2>ReLEAF</h2>
         <p class="pb-handoff__slogan">Make it where it grows.</p>
         <ul class="pb-handoff__spec" aria-label="What the problem asks for">
-          <li>On demand</li><li>Right time</li><li>Right amount</li><li>On site</li><li>Contained</li><li>Newest science</li>
+          <li>On demand</li><li>Right time</li><li>Right amount</li><li>On site</li><li>Contained</li><li>In farmers&rsquo; hands</li>
         </ul>
       </div>
     </div>
@@ -674,7 +624,17 @@
   </div>
 
   <footer class="pb-foot">
-    <div class="pb-inner"><p>Draft &middot; ReLeaf &middot; GEMS Taiwan &middot; iGEM 2026</p></div>
+    <div class="pb-inner">
+      <p class="pb-foot__h">Sources</p>
+      <ol class="pb-src">
+        <li id="src-1">GEMS Taiwan 2026. Geospatial Analysis (wiki page): climate volatility index, farm parcels, farmer age.</li>
+        <li id="src-2">Directive 2009/41/EC on the contained use of genetically modified micro-organisms.</li>
+        <li id="src-3">Directive 2001/18/EC on the deliberate release into the environment of genetically modified organisms.</li>
+        <li id="src-4">Qing Y, Wang S, Ancell BC, Yang Z-L. Accelerating flash droughts induced by the joint influence of soil moisture depletion and atmospheric aridity. <i>Nat Commun</i> 13, 1139 (2022).</li>
+        <li id="src-5">Marrone PG. Increasing the use of biological pesticides in integrated pest management programs. <i>Front Insect Sci</i> (2025). doi:10.3389/finsc.2025.1552361</li>
+        <li id="src-6">Regulation (EU) 2019/1009, Annex II, component material category 7 (microorganisms).</li>
+      </ol>
+    </div>
   </footer>
 
   <script src="assets/js/problem.js" defer></script>
