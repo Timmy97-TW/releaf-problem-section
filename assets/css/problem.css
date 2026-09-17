@@ -192,7 +192,7 @@ img { display: block; max-width: 100%; height: auto; }
 .pb-ramp__ends { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
 .pb-key__row { display: flex; align-items: center; gap: .45rem; transition: opacity .6s; }
 .pb-key__row i { width: .75rem; height: .75rem; border-radius: 2px; background: var(--c); }
-.pb-map:has([data-view="weather"]) :is(.pb-key__row, .pb-key__grp--farm) { opacity: .3; }
+.pb-map:has(.pb-atlas[data-view="weather"]) :is(.pb-key__row, .pb-key__grp--farm) { opacity: .3; }
 
 
 /* =============================================================== 02  GAP === */
@@ -349,8 +349,8 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* the dawn ground lifts back to paper */
 .jr-after {
-  padding: 16vh 0 var(--sp-4);
-  background: linear-gradient(180deg, var(--soil) 0, #6d6852 22%, #d9d2c0 52%, #f7f5ef 76%, var(--white) 100%);
+  padding: 20vh 0 var(--sp-4);
+  background: linear-gradient(180deg, var(--soil) 0, #6d6852 5vh, #d9d2c0 11vh, #f7f5ef 16vh, var(--white) 20vh);
 }
 
 
