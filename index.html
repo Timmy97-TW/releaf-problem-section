@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReLeaf &middot; The problem &middot; homepage section draft</title>
+  <meta name="description" content="Draft of the expanded problem section for the ReLeaf (GEMS Taiwan, iGEM 2026) homepage: the threat, the gap, the catch, and the chain that hands off to the solution." />
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/problem.css" />
+</head>
+<body>
+<!-- =============================================================================
+     PROBLEM SECTION, standalone draft.
+
+     Built to be lifted into wiki/index.html between the hero and the dark act.
+     It reads tokens.css exactly as the homepage does, and every class here is
+     prefixed .pb- so it cannot collide with home.css when it moves in.
+
+     Five beats, three sections:
+       01  threat + victim   the map, and who farms the ground it marks
+       02  gap + cost        the product exists; the route to the farm is the problem
+       03  catch             making it on the farm means live bacteria on the farm
+       then the chain, which collapses onto the farmer and hands off to ReLeaf.
+
+     Each section ends with the requirement it earns. The handoff lights all
+     five together, so the solution arrives as the answer to a list the reader
+     has already agreed to.
+
+     Homepage rule still applies: every number here is on a sub-page with its
+     evidence. Sources are named in the HTML comment above each figure.
+     ========================================================================== -->
+
+  <div class="pb-draftbar">
+    <span><b>Draft</b> &middot; homepage problem section, standalone</span>
+    <span class="pb-draftbar__jump">
+      <a href="#threat">01 Threat</a><a href="#gap">02 Gap</a><a href="#catch">03 Catch</a><a href="#chain">Handoff</a>
+    </span>
+  </div>
+
+  <!-- stand-in for the homepage hero, so the section is read in context -->
+  <header class="pb-hero">
+    <div class="pb-inner">
+      <p class="kicker">Stand-in for the homepage hero</p>
+      <p class="pb-hero__claim">Every farmer a biomanufacturer.</p>
+      <p class="pb-hero__sub">Scroll. The problem section starts below.</p>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════ 01  THREAT + VICTIM ═══ -->
+  <!-- Sources: geospatial-analysis/index.html, sections "The warming, and the
+       speed of it", "The stress you cannot see", "Who is standing in the field",
+       "Volatility against the farms that carry it". 97% / 99.8% are the shares
+       the homepage atlas already quotes (measured off the layer by
+       band_assign.py); they still need a line on the geospatial page. -->
+  <section class="pb-band" id="threat" aria-labelledby="threat-title">
+    <div class="pb-inner">
+      <header class="pb-head">
+        <p class="pb-index"><span>01</span>The threat, and who it lands on</p>
+        <h2 class="pb-title" id="threat-title">The weather swings hardest where the farms are smallest.</h2>
+        <p class="lede">Taiwan has warmed 0.29&nbsp;&deg;C per decade since 1991,
+        nearly three times the rate before it. We built one climate volatility
+        index from the day&ndash;night swing, the seasonal swing and how unevenly
+        the rain falls, then laid every farm parcel on the main island over it.</p>
+      </header>
+
+      <div class="pb-mapgrid">
+        <figure class="pb-map">
+          <div class="pb-map__toggle" role="group" aria-label="Map layer">
+            <button type="button" data-view="weather" aria-pressed="false">The weather</button>
+            <button type="button" data-view="farms" aria-pressed="true">The farms on it</button>
+          </div>
+          <div class="pb-atlas" id="pb-atlas" data-view="farms" role="img"
+               aria-label="Map of Taiwan. Counties shaded by climate volatility index, pale in the north and east, darkest through the central west and south-west. Farm parcels under two hectares, drawn in dark green, cover almost all of the western plain, which is where the most volatile counties are.">
+            <img class="pb-atlas__l pb-atlas__sizer" src="assets/img/smalldim.webp" width="800" height="1267" alt="" />
+            <img class="pb-atlas__l" data-l="w" src="assets/img/v1.webp" width="800" height="1267" alt="" />
+            <img class="pb-atlas__l" data-l="w" src="assets/img/v2.webp" width="800" height="1267" alt="" />
+            <img class="pb-atlas__l" data-l="w" src="assets/img/v3.webp" width="800" height="1267" alt="" />
+            <img class="pb-atlas__l" data-l="w" src="assets/img/v4.webp" width="800" height="1267" alt="" />
+            <img class="pb-atlas__l" data-l="w" src="assets/img/v5.webp" width="800" height="1267" alt="" />
+            <img class="pb-atlas__l" data-l="f" src="assets/img/base.webp" width="800" height="1267" alt="" />
+            <img class="pb-atlas__l" data-l="f" src="assets/img/large.webp" width="800" height="1267" alt="" />
+          </div>
+          <figcaption class="pb-key">
+            <span class="pb-key__grp">Climate volatility index</span>
+            <span class="pb-ramp" aria-hidden="true"><i style="--c:var(--vol-1)"></i><i style="--c:var(--vol-2)"></i><i style="--c:var(--vol-3)"></i><i style="--c:var(--vol-4)"></i><i style="--c:var(--vol-5)"></i></span>
+            <span class="pb-ramp__ends"><span>0.38 steadier</span><span>0.93 swings hardest</span></span>
+            <span class="pb-key__grp pb-key__grp--farm">Farm parcels</span>
+            <span class="pb-key__row"><i style="--c:var(--parcel-small)"></i>Under two hectares</span>
+            <span class="pb-key__row"><i style="--c:var(--parcel-large)"></i>Over two hectares</span>
+            <span class="pb-key__note">Our QGIS layers. The overlap is spatial; no correlation has been fitted.</span>
+          </figcaption>
+        </figure>
+
+        <div class="pb-facts">
+          <dl class="pb-figs">
+            <div class="pb-fig">
+              <dt><b>97%</b></dt>
+              <dd>of the farmland on the map is in parcels under two hectares. On the ground that swings hardest it is <b>99.8%</b>.</dd>
+            </div>
+            <div class="pb-fig">
+              <dt><b>26.7</b><small>&nbsp;&deg;C</small></dt>
+              <dd>Kaohsiung&rsquo;s average July night, already inside the 25&ndash;33&nbsp;&deg;C band that damages rice at grain-setting.</dd>
+            </div>
+            <div class="pb-fig">
+              <dt><b>63.5</b></dt>
+              <dd>the average Taiwanese farmer&rsquo;s age. More than half are over 65.</dd>
+            </div>
+            <div class="pb-fig">
+              <dt><b>0.9&ndash;1.1</b><small>&nbsp;ha</small></dt>
+              <dd>what most farm households work. There is no other kind of farmer to build for.</dd>
+            </div>
+          </dl>
+
+          <div class="pb-story">
+            <p class="pb-story__label">No instrument on the small farm</p>
+            <p>Ms. Chen lays dried weeds over her soil before a dry spell, so
+            the morning dew soaks in slowly. That buys about three weeks before
+            she has to check again, a clock built from twenty-five years on one
+            plot. Nothing on her farm measures stress; she reads it.</p>
+            <p>Flash droughts are now arriving faster: nearly half develop
+            inside five days. A three-week clock does not have to break for
+            the crop to be lost. It only has to run slow once.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-earns" aria-label="What this section asks of a solution">
+        <p class="pb-earns__label">So protection has to arrive</p>
+        <ul class="pb-earns__list">
+          <li><span class="pb-tag">On demand</span><em>when this week&rsquo;s weather calls for it, not when the order ships</em></li>
+          <li><span class="pb-tag">At the right time</span><em>before the plant shows the damage</em></li>
+          <li><span class="pb-tag">In the right amount</span><em>matched to one small field, not an average one</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ 02  GAP + COST ════ -->
+  <!-- Sources: software/index.html ("somebody who owns a fermenter, a cold
+       chain and a registration dossier"); description/ scaffold ("Answer the
+       sachet"); homepage dark act and parts list; geospatial-analysis
+       "Getting it there" (616 suppliers, 346 township nodes). No cost per
+       litre exists for either route: the ledger compares what each route
+       REQUIRES and says so. Do not add a price until entrepreneurship/ has one. -->
+  <section class="pb-band pb-band--tint" id="gap" aria-labelledby="gap-title">
+    <div class="pb-inner">
+      <header class="pb-head">
+        <p class="pb-index"><span>02</span>The gap, and what it costs</p>
+        <h2 class="pb-title" id="gap-title">Bioprotectants already work. They are made for a warehouse, not a one-hectare farm.</h2>
+        <p class="lede">Biological protectants that hold a plant through heat,
+        drought and pathogen pressure are sold in Taiwan today. To use one, a
+        grower buys it from somebody who owns a fermenter, a cold chain and a
+        registration dossier, and waits for it to come down the road.</p>
+      </header>
+
+      <div class="pb-objection">
+        <p class="pb-objection__q"><span class="pb-objection__label">The obvious objection</span>&ldquo;Then why not just buy them?&rdquo;</p>
+        <div class="pb-objection__a">
+          <p>Shelf life is not the reason. A dried spore sachet keeps at room
+          temperature and is cheap. The reason is <b>timing and dose</b>. A
+          bottle is made months before anyone knows what the season will do,
+          sized for an average field, and delivered on the distributor&rsquo;s
+          schedule. A drought that forms in five days does not wait for an
+          order, and a one-hectare farm cannot hold stock for every stress it
+          might meet.</p>
+        </div>
+      </div>
+
+      <div class="pb-ledger" role="region" aria-labelledby="ledger-cap" tabindex="0">
+        <table>
+          <caption id="ledger-cap">Two routes from a fermenter to a root zone</caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Requirement</span></th>
+              <th scope="col">Made in a central plant<small>today</small></th>
+              <th scope="col" class="is-site">Made at the farm<small>ReLeaf, as designed</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Steps before the farmer touches it</th>
+              <td><b class="pb-num">6</b> a central factory, production, purification, packaging, transport and storage</td>
+              <td class="is-site"><b class="pb-num">0</b> it is made beside the field that uses it</td>
+            </tr>
+            <tr>
+              <th scope="row">How cells are kept out of the product</th>
+              <td>A purification train after the fermenter</td>
+              <td class="is-site">One membrane wall: the protein crosses, the cells do not</td>
+            </tr>
+            <tr>
+              <th scope="row">When it is made</th>
+              <td>Months ahead, against a sales forecast</td>
+              <td class="is-site">The week the stress forecast calls for it</td>
+            </tr>
+            <tr>
+              <th scope="row">How much is made</th>
+              <td>A fixed pack size</td>
+              <td class="is-site">A run length set by one field</td>
+            </tr>
+            <tr>
+              <th scope="row">What it depends on</th>
+              <td>A licensed facility, a distributor, and a road. We routed 616 registered suppliers to 346 farmland townships to measure that road.</td>
+              <td class="is-site">Power, medium, and a vessel that stays sealed (section&nbsp;03)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pb-gapnote"><span class="pb-flag">Not measured yet</span> A cost
+      per litre for either route. The comparison above is what each route
+      requires. The price belongs on the Entrepreneurship page, with its
+      working, before it appears here.</p>
+
+      <div class="pb-earns" aria-label="What this section asks of a solution">
+        <p class="pb-earns__label">So the fermenter has to move</p>
+        <ul class="pb-earns__list">
+          <li><span class="pb-tag">On site</span><em>made beside the field that uses it, with no road to wait on</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════ 03  THE CATCH ═══ -->
+  <!-- Sources: hardware/bioreactor/index.html 1.1 and 5.2 (0.2 um PES, 2 mL
+       shell-side on LB, 0 colonies, cycle 1, 6 June 2026, single plating;
+       pump-head leak in cycle 1); safety-and-security/ scaffold (168 forms
+       spores; second containment layer not built); laws-and-regulations/
+       ("No Taiwan regulator has confirmed a contained-use classification"). -->
+  <section class="pb-band" id="catch" aria-labelledby="catch-title">
+    <div class="pb-inner">
+      <header class="pb-head">
+        <p class="pb-index"><span>03</span>The catch</p>
+        <h2 class="pb-title" id="catch-title">Making it on the farm puts live engineered bacteria on the farm.</h2>
+        <p class="lede">Move the fermenter to the field and the organism comes
+        with it. A farm has no containment building, no autoclave and no
+        biosafety officer, and our chassis, <i>B.&nbsp;subtilis</i> 168, forms
+        spores. The protectant has to get into the soil. The bacteria that make
+        it must not.</p>
+      </header>
+
+      <div class="pb-catchgrid">
+        <figure class="pb-wall">
+          <svg viewBox="0 0 520 300" role="img" aria-labelledby="wall-t wall-d">
+            <title id="wall-t">Containment by one wall</title>
+            <desc id="wall-d">Engineered cells on the left side of a membrane wall. Protein molecules cross the wall to the right and flow down into the root zone. The cells are stopped at the wall.</desc>
+            <defs>
+              <pattern id="pores" width="10" height="16" patternUnits="userSpaceOnUse">
+                <rect width="10" height="16" fill="var(--wall)"/>
+                <rect x="3" y="6" width="4" height="4" fill="var(--paper)"/>
+              </pattern>
+              <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" fill="var(--leaf-700)"/>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="520" height="300" fill="var(--paper)"/>
+            <!-- culture side -->
+            <rect x="20" y="30" width="210" height="190" rx="10" fill="var(--cell-bg)"/>
+            <text x="36" y="56" class="svg-lab">Culture side</text>
+            <text x="36" y="74" class="svg-sub">engineered cells, sealed in</text>
+            <g class="svg-cells">
+              <rect x="50" y="100" width="34" height="14" rx="7"/>
+              <rect x="110" y="92" width="34" height="14" rx="7" transform="rotate(20 127 99)"/>
+              <rect x="70" y="140" width="34" height="14" rx="7" transform="rotate(-15 87 147)"/>
+              <rect x="140" y="150" width="34" height="14" rx="7"/>
+              <rect x="160" y="112" width="34" height="14" rx="7" transform="rotate(-30 177 119)"/>
+              <rect x="44" y="180" width="34" height="14" rx="7" transform="rotate(10 61 187)"/>
+              <rect x="120" y="186" width="34" height="14" rx="7"/>
+            </g>
+            <!-- stopped cell -->
+            <rect x="196" y="126" width="34" height="14" rx="7" class="svg-stopped"/>
+            <!-- wall -->
+            <rect x="238" y="24" width="14" height="202" fill="url(#pores)"/>
+            <text x="245" y="16" text-anchor="middle" class="svg-sub">0.2&#8201;&#181;m membrane</text>
+            <!-- protein side -->
+            <rect x="260" y="30" width="240" height="190" rx="10" fill="var(--prot-bg)"/>
+            <text x="276" y="56" class="svg-lab">Harvest side</text>
+            <text x="276" y="74" class="svg-sub">protein only</text>
+            <g class="svg-prot">
+              <circle cx="222" cy="98" r="4.5"/><circle cx="274" cy="102" r="4.5"/>
+              <circle cx="310" cy="120" r="4.5"/><circle cx="296" cy="160" r="4.5"/>
+              <circle cx="350" cy="140" r="4.5"/><circle cx="380" cy="104" r="4.5"/>
+              <circle cx="420" cy="170" r="4.5"/><circle cx="215" cy="176" r="4.5"/>
+            </g>
+            <path d="M232 98 H268" stroke="var(--leaf-700)" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+            <path d="M230 176 H286" stroke="var(--leaf-700)" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+            <path d="M440 190 V258" stroke="var(--leaf-700)" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+            <!-- soil -->
+            <path d="M0 262 H520" stroke="var(--soil)" stroke-width="2"/>
+            <text x="452" y="286" class="svg-lab" text-anchor="end">Root zone</text>
+            <text x="20" y="286" class="svg-sub">what must never reach it: the cells</text>
+          </svg>
+          <figcaption>As designed. What crosses is set by pore size alone, so
+          vesicles and cell debris can cross too. A second containment stage
+          has not been built.</figcaption>
+        </figure>
+
+        <ol class="pb-tests">
+          <li>
+            <b>Cells stay behind the wall.</b>
+            <span>2&nbsp;mL of harvest-side medium plated on LB agar grew
+            0&nbsp;colonies. <span class="pb-flag">One plating</span>
+            cycle&nbsp;1, 6&nbsp;June&nbsp;2026. Replicates and log reduction
+            are not measured.</span>
+          </li>
+          <li>
+            <b>Nobody opens the vessel.</b>
+            <span>Every opening is a containment event, so the loop is
+            harvested through the membrane and read by an in-line photometer.</span>
+          </li>
+          <li>
+            <b>A leak counts as a breach.</b>
+            <span>Cycle&nbsp;1 leaked at the pump head. We logged it as lost
+            containment, and the next build changed because of it.</span>
+          </li>
+          <li>
+            <b>A regulator has to agree.</b>
+            <span><span class="pb-flag pb-flag--open">Open</span> No Taiwan
+            regulator has yet confirmed a contained-use classification for a
+            device like this.</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pb-earns" aria-label="What this section asks of a solution">
+        <p class="pb-earns__label">So the machine has to be</p>
+        <ul class="pb-earns__list">
+          <li><span class="pb-tag">Sealed</span><em>closed from inoculation to shutdown</em></li>
+          <li><span class="pb-tag">Biosafe</span><em>the product leaves, the organism does not</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ THE CHAIN → HANDOFF ════ -->
+  <!-- The existing homepage chain, unchanged in markup, now the last beat of
+       the problem. With JS it holds, collapses onto the farmer and turns into
+       the green light; without JS or with reduced motion it reads as a static
+       chain followed by the handoff card. -->
+  <div class="pb-stagewrap" id="chain">
+    <div class="pb-stage">
+      <div class="pb-chainhead">
+        <p class="kicker">The problem, in one line</p>
+        <h2>Protection exists. Getting it to the field takes time.</h2>
+      </div>
+
+      <div class="pb-chainwrap" role="img"
+           aria-label="The nine steps a crop protectant travels today: a centralised factory, production, purification, packaging, transportation and storage, and then the farmer, farm storage and application. Only the last three happen on the farm.">
+        <ol class="pb-chain">
+          <li class="step"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20.5h20"/><path d="M3 20.5V12.5l4 2.5v-2.5l4 2.5v-2.5l4 2.5v5.5"/><path d="M17.5 20.5V8.5h3.5v12"/></svg><span class="step__dot"></span><b>Centralised factory</b></li>
+          <li class="step"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5h5v2.5h-5z"/><path d="M12 5v9.5"/><path d="M5.5 6.5h13"/><path d="M6.5 6.5v8a5.5 5.5 0 0 0 11 0v-8"/><path d="M9.25 10.5h5.5"/><path d="M9.25 13.5h5.5"/></svg><span class="step__dot"></span><b>Production</b></li>
+          <li class="step"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2"/><path d="M8.5 4h7v8.5L12 15l-3.5-2.5z"/><path d="M8.5 7.5h7"/><path d="M8.5 10.5h7"/><path d="M12 15v1.3"/><path d="M12 17.1c.85 1 1.3 1.6 1.3 2.15a1.3 1.3 0 0 1-2.6 0c0-.55.45-1.15 1.3-2.15z"/></svg><span class="step__dot"></span><b>Purification</b></li>
+          <li class="step"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5h4v2.5h-4z"/><path d="M14 5v1.5c2 .8 3 2.1 3 3.9v9.6a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-9.6c0-1.8 1-3.1 3-3.9V5"/><path d="M9 12h6v4.5H9z"/></svg><span class="step__dot"></span><b>Packaging</b></li>
+          <li class="step"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5h11v11H2z"/><path d="M13 8.5h3.5l3 3v4H13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="18" r="2.5"/></svg><span class="step__dot"></span><b>Transportation</b></li>
+          <li class="step"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5h20"/><path d="M3.5 8.5v12h17v-12"/><path d="M8 13h8v7.5H8z"/><path d="M8 16.5h8"/></svg><span class="step__dot"></span><b>Storage</b></li>
+          <li class="step step--farm step--hub"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M4.5 20.5v-1a6 6 0 0 1 6-6h3a6 6 0 0 1 6 6v1"/></svg><span class="step__dot"></span><b>Farmer</b></li>
+          <li class="step step--farm"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11.5 20.5 7"/><path d="M5.5 11v9.5h13V7.55"/><path d="M9.5 20.5v-5.5h4.5v5.5"/></svg><span class="step__dot"></span><b>Farm storage</b></li>
+          <li class="step step--farm"><svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5h5v1.5l-1.3 1.5h-2.4L9.5 4z"/><path d="M12 7v2.4"/><path d="m9.9 7.1-.8 2.2"/><path d="m14.1 7.1.8 2.2"/><path d="M12 20.5v-6"/><path d="M12 17c-2.1 0-3.6-1.5-3.6-3.4 2.1 0 3.6 1.5 3.6 3.4z"/><path d="M12 15c0-1.9 1.5-3.4 3.6-3.4 0 1.9-1.5 3.4-3.6 3.4z"/><path d="M8 20.5h8"/></svg><span class="step__dot"></span><b>Application</b></li>
+        </ol>
+      </div>
+
+      <p class="pb-chainfoot"><span>Everything in section 01 asks for protection
+      on demand, and everything in section 02 says it is made six steps away.
+      What has not moved is the road between the factory that makes it and the
+      one-hectare farm that needs it.</span></p>
+
+      <div class="pb-spark" aria-hidden="true"></div>
+
+      <div class="pb-handoff">
+        <img src="assets/img/logo-720.webp" alt="The ReLeaf team logo: a seedling-headed mascot with roots, ringed by the words GEMS Taiwan." width="720" height="720" />
+        <h2>ReLEAF</h2>
+        <p class="pb-handoff__slogan">Make it where it grows.</p>
+        <ul class="pb-handoff__spec" aria-label="The five requirements the problem set">
+          <li>On demand</li><li>Right time</li><li>Right amount</li><li>On site</li><li>Sealed &amp; biosafe</li>
+        </ul>
+        <p class="pb-handoff__gloss">A sealed perfusion bioreactor that makes
+        plant protectants at the farm, and runs only when the crop is under
+        stress. The homepage&rsquo;s dark act picks up from here.</p>
+      </div>
+    </div>
+    <div class="pb-runway" aria-hidden="true"></div>
+  </div>
+
+  <footer class="pb-foot">
+    <div class="pb-inner">
+      <p>Draft for the ReLeaf wiki homepage &middot; GEMS Taiwan &middot; iGEM 2026.
+      Map layers, numbers and sources are the ones already on the wiki&rsquo;s
+      Geospatial Analysis, Hardware and Safety pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/problem.js" defer></script>
+</body>
+</html>
