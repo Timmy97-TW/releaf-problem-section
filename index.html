@@ -3,65 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ReLeaf &middot; The problem &middot; homepage section draft</title>
-  <meta name="description" content="Draft of the expanded problem section for the ReLeaf (GEMS Taiwan, iGEM 2026) homepage: the threat, the gap, the catch, and the chain that hands off to the solution." />
+  <title>ReLeaf &middot; The problem</title>
+  <meta name="description" content="Draft of the problem section for the ReLeaf (GEMS Taiwan, iGEM 2026) wiki homepage." />
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/tokens.css" />
   <link rel="stylesheet" href="assets/css/problem.css" />
 </head>
 <body>
-<!-- =============================================================================
-     PROBLEM SECTION, standalone draft.
+<!-- Problem section draft for wiki/index.html. Sits between the hero and the
+     dark act. Every class is prefixed .pb- or .jr-. Sources for each number
+     are named above its section. -->
 
-     Built to be lifted into wiki/index.html between the hero and the dark act.
-     It reads tokens.css exactly as the homepage does, and every class here is
-     prefixed .pb- so it cannot collide with home.css when it moves in.
-
-     Five beats, three sections:
-       01  threat + victim   the map, and who farms the ground it marks
-       02  gap + cost        the product exists; the route to the farm is the problem
-       03  catch             making it on the farm means live bacteria on the farm
-       then the chain, which collapses onto the farmer and hands off to ReLeaf.
-
-     Each section ends with the requirement it earns. The handoff lights all
-     five together, so the solution arrives as the answer to a list the reader
-     has already agreed to.
-
-     Homepage rule still applies: every number here is on a sub-page with its
-     evidence. Sources are named in the HTML comment above each figure.
-     ========================================================================== -->
-
-  <div class="pb-draftbar">
-    <span><b>Draft</b> &middot; homepage problem section, standalone</span>
-    <span class="pb-draftbar__jump">
-      <a href="#threat">01 Threat</a><a href="#gap">02 Gap</a><a href="#catch">03 Catch</a><a href="#chain">Handoff</a>
-    </span>
-  </div>
-
-  <!-- stand-in for the homepage hero, so the section is read in context -->
   <header class="pb-hero">
     <div class="pb-inner">
-      <p class="kicker">Stand-in for the homepage hero</p>
       <p class="pb-hero__claim">Every farmer a biomanufacturer.</p>
-      <p class="pb-hero__sub">Scroll. The problem section starts below.</p>
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════════════ 01  THREAT + VICTIM ═══ -->
-  <!-- Sources: geospatial-analysis/index.html, sections "The warming, and the
-       speed of it", "The stress you cannot see", "Who is standing in the field",
-       "Volatility against the farms that carry it". 97% / 99.8% are the shares
-       the homepage atlas already quotes (measured off the layer by
-       band_assign.py); they still need a line on the geospatial page. -->
+  <!-- 01. Source: geospatial-analysis/index.html. 97% and 99.8% are the
+       atlas shares already on the homepage; add them to the geospatial page. -->
   <section class="pb-band" id="threat" aria-labelledby="threat-title">
     <div class="pb-inner">
       <header class="pb-head">
-        <p class="pb-index"><span>01</span>The threat, and who it lands on</p>
+        <p class="pb-index"><span>01</span>The threat</p>
         <h2 class="pb-title" id="threat-title">The weather swings hardest where the farms are smallest.</h2>
         <p class="lede">Taiwan has warmed 0.29&nbsp;&deg;C per decade since 1991,
-        nearly three times the rate before it. We built one climate volatility
-        index from the day&ndash;night swing, the seasonal swing and how unevenly
-        the rain falls, then laid every farm parcel on the main island over it.</p>
+        nearly three times the earlier rate. We scored every county for how far
+        its temperature and rain swing, then laid every farm parcel on the main
+        island over the result.</p>
       </header>
 
       <div class="pb-mapgrid">
@@ -71,7 +40,7 @@
             <button type="button" data-view="farms" aria-pressed="true">The farms on it</button>
           </div>
           <div class="pb-atlas" id="pb-atlas" data-view="farms" role="img"
-               aria-label="Map of Taiwan. Counties shaded by climate volatility index, pale in the north and east, darkest through the central west and south-west. Farm parcels under two hectares, drawn in dark green, cover almost all of the western plain, which is where the most volatile counties are.">
+               aria-label="Map of Taiwan. Counties shaded by climate volatility, pale in the north and east, darkest through the central west and south-west. Farm parcels under two hectares, in dark green, cover almost all of the western plain.">
             <img class="pb-atlas__l pb-atlas__sizer" src="assets/img/smalldim.webp" width="800" height="1267" alt="" />
             <img class="pb-atlas__l" data-l="w" src="assets/img/v1.webp" width="800" height="1267" alt="" />
             <img class="pb-atlas__l" data-l="w" src="assets/img/v2.webp" width="800" height="1267" alt="" />
@@ -82,264 +51,594 @@
             <img class="pb-atlas__l" data-l="f" src="assets/img/large.webp" width="800" height="1267" alt="" />
           </div>
           <figcaption class="pb-key">
-            <span class="pb-key__grp">Climate volatility index</span>
+            <span class="pb-key__grp">Climate volatility</span>
             <span class="pb-ramp" aria-hidden="true"><i style="--c:var(--vol-1)"></i><i style="--c:var(--vol-2)"></i><i style="--c:var(--vol-3)"></i><i style="--c:var(--vol-4)"></i><i style="--c:var(--vol-5)"></i></span>
-            <span class="pb-ramp__ends"><span>0.38 steadier</span><span>0.93 swings hardest</span></span>
+            <span class="pb-ramp__ends"><span>0.38</span><span>0.93</span></span>
             <span class="pb-key__grp pb-key__grp--farm">Farm parcels</span>
-            <span class="pb-key__row"><i style="--c:var(--parcel-small)"></i>Under two hectares</span>
-            <span class="pb-key__row"><i style="--c:var(--parcel-large)"></i>Over two hectares</span>
-            <span class="pb-key__note">Our QGIS layers. The overlap is spatial; no correlation has been fitted.</span>
+            <span class="pb-key__row"><i style="--c:var(--parcel-small)"></i>Under 2&nbsp;ha</span>
+            <span class="pb-key__row"><i style="--c:var(--parcel-large)"></i>Over 2&nbsp;ha</span>
           </figcaption>
         </figure>
 
         <div class="pb-facts">
           <dl class="pb-figs">
             <div class="pb-fig">
-              <dt><b>97%</b></dt>
-              <dd>of the farmland on the map is in parcels under two hectares. On the ground that swings hardest it is <b>99.8%</b>.</dd>
+              <dt>97%</dt>
+              <dd>of mapped farmland is in parcels under two hectares, and 99.8% on the ground that swings hardest.</dd>
             </div>
             <div class="pb-fig">
-              <dt><b>26.7</b><small>&nbsp;&deg;C</small></dt>
-              <dd>Kaohsiung&rsquo;s average July night, already inside the 25&ndash;33&nbsp;&deg;C band that damages rice at grain-setting.</dd>
+              <dt>26.7<small>&nbsp;&deg;C</small></dt>
+              <dd>is Kaohsiung&rsquo;s average July night, already inside the 25&ndash;33&nbsp;&deg;C band that damages rice as the grain sets.</dd>
             </div>
             <div class="pb-fig">
-              <dt><b>63.5</b></dt>
-              <dd>the average Taiwanese farmer&rsquo;s age. More than half are over 65.</dd>
+              <dt>63.5</dt>
+              <dd>is the average Taiwanese farmer&rsquo;s age. More than half are over 65.</dd>
             </div>
             <div class="pb-fig">
-              <dt><b>0.9&ndash;1.1</b><small>&nbsp;ha</small></dt>
-              <dd>what most farm households work. There is no other kind of farmer to build for.</dd>
+              <dt>0.9&ndash;1.1<small>&nbsp;ha</small></dt>
+              <dd>is what most farm households work.</dd>
             </div>
           </dl>
 
           <div class="pb-story">
-            <p class="pb-story__label">No instrument on the small farm</p>
-            <p>Ms. Chen lays dried weeds over her soil before a dry spell, so
-            the morning dew soaks in slowly. That buys about three weeks before
-            she has to check again, a clock built from twenty-five years on one
-            plot. Nothing on her farm measures stress; she reads it.</p>
-            <p>Flash droughts are now arriving faster: nearly half develop
-            inside five days. A three-week clock does not have to break for
-            the crop to be lost. It only has to run slow once.</p>
+            <p class="pb-story__label">No instruments on a small farm</p>
+            <p>Before a dry spell, Ms. Chen lays dried weeds over her soil so
+            the morning dew soaks in slowly. That buys her about three weeks
+            before she checks again, a rhythm learned over twenty-five years on
+            one plot. She reads stress by eye.</p>
+            <p>Flash droughts now form faster, and nearly half develop inside
+            five days. One slow week in a three-week rhythm is enough to lose
+            the crop.</p>
           </div>
         </div>
       </div>
 
-      <div class="pb-earns" aria-label="What this section asks of a solution">
-        <p class="pb-earns__label">So protection has to arrive</p>
+      <div class="pb-earns">
+        <p class="pb-earns__label">Protection has to arrive</p>
         <ul class="pb-earns__list">
-          <li><span class="pb-tag">On demand</span><em>when this week&rsquo;s weather calls for it, not when the order ships</em></li>
-          <li><span class="pb-tag">At the right time</span><em>before the plant shows the damage</em></li>
-          <li><span class="pb-tag">In the right amount</span><em>matched to one small field, not an average one</em></li>
+          <li class="pb-tag">On demand</li>
+          <li class="pb-tag">At the right time</li>
+          <li class="pb-tag">In the right amount</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════ 02  GAP + COST ════ -->
-  <!-- Sources: software/index.html ("somebody who owns a fermenter, a cold
-       chain and a registration dossier"); description/ scaffold ("Answer the
-       sachet"); homepage dark act and parts list; geospatial-analysis
-       "Getting it there" (616 suppliers, 346 township nodes). No cost per
-       litre exists for either route: the ledger compares what each route
-       REQUIRES and says so. Do not add a price until entrepreneurship/ has one. -->
+  <!-- 02. Sources: software/ (fermenter, cold chain, registration dossier);
+       description/ (the dried-sachet objection); safety-and-security/ and
+       laws-and-regulations/ (containment and approval are open). No cost per
+       litre exists for either route, so the table compares requirements. -->
   <section class="pb-band pb-band--tint" id="gap" aria-labelledby="gap-title">
     <div class="pb-inner">
       <header class="pb-head">
-        <p class="pb-index"><span>02</span>The gap, and what it costs</p>
-        <h2 class="pb-title" id="gap-title">Bioprotectants already work. They are made for a warehouse, not a one-hectare farm.</h2>
-        <p class="lede">Biological protectants that hold a plant through heat,
-        drought and pathogen pressure are sold in Taiwan today. To use one, a
-        grower buys it from somebody who owns a fermenter, a cold chain and a
-        registration dossier, and waits for it to come down the road.</p>
+        <p class="pb-index"><span>02</span>The gap</p>
+        <h2 class="pb-title" id="gap-title">Protectants are made far from the farm. Making them nearby brings live bacteria onto it.</h2>
+        <p class="lede">Biological protectants that carry a plant through heat
+        and drought are on sale in Taiwan today. A grower buys them from
+        a company that owns a fermenter, a cold chain and a registration dossier,
+        then waits for the delivery.</p>
       </header>
 
       <div class="pb-objection">
-        <p class="pb-objection__q"><span class="pb-objection__label">The obvious objection</span>&ldquo;Then why not just buy them?&rdquo;</p>
-        <div class="pb-objection__a">
-          <p>Shelf life is not the reason. A dried spore sachet keeps at room
-          temperature and is cheap. The reason is <b>timing and dose</b>. A
-          bottle is made months before anyone knows what the season will do,
-          sized for an average field, and delivered on the distributor&rsquo;s
-          schedule. A drought that forms in five days does not wait for an
-          order, and a one-hectare farm cannot hold stock for every stress it
-          might meet.</p>
-        </div>
+        <p class="pb-objection__q"><span class="pb-objection__label">So why not buy them?</span>Because the bottle is made for an average season.</p>
+        <p class="pb-objection__a">Dried spore products keep at room
+        temperature and cost little. Timing and dose are what fail. A product is made months before anyone knows what the weather
+        will do, packed in fixed sizes for an average field, and delivered on
+        the distributor&rsquo;s schedule. A drought that forms in five days
+        arrives before the order does.</p>
       </div>
 
       <div class="pb-ledger" role="region" aria-labelledby="ledger-cap" tabindex="0">
         <table>
-          <caption id="ledger-cap">Two routes from a fermenter to a root zone</caption>
+          <caption id="ledger-cap">Two places a protectant could be made</caption>
           <thead>
             <tr>
-              <th scope="col"><span class="visually-hidden">Requirement</span></th>
-              <th scope="col">Made in a central plant<small>today</small></th>
-              <th scope="col" class="is-site">Made at the farm<small>ReLeaf, as designed</small></th>
+              <th scope="col"><span class="visually-hidden">Question</span></th>
+              <th scope="col">In a central plant</th>
+              <th scope="col" class="is-farm">On the farm</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Steps before the farmer touches it</th>
-              <td><b class="pb-num">6</b> a central factory, production, purification, packaging, transport and storage</td>
-              <td class="is-site"><b class="pb-num">0</b> it is made beside the field that uses it</td>
-            </tr>
-            <tr>
-              <th scope="row">How cells are kept out of the product</th>
-              <td>A purification train after the fermenter</td>
-              <td class="is-site">One membrane wall: the protein crosses, the cells do not</td>
+              <th scope="row">Steps before the farmer has it</th>
+              <td><b class="pb-num">6</b>factory, production, purification, packaging, transport, storage</td>
+              <td class="is-farm"><b class="pb-num">0</b>made beside the field</td>
             </tr>
             <tr>
               <th scope="row">When it is made</th>
               <td>Months ahead, against a sales forecast</td>
-              <td class="is-site">The week the stress forecast calls for it</td>
+              <td class="is-farm">The week the weather turns</td>
             </tr>
             <tr>
-              <th scope="row">How much is made</th>
+              <th scope="row">How much</th>
               <td>A fixed pack size</td>
-              <td class="is-site">A run length set by one field</td>
+              <td class="is-farm">Enough for one field</td>
             </tr>
-            <tr>
-              <th scope="row">What it depends on</th>
-              <td>A licensed facility, a distributor, and a road. We routed 616 registered suppliers to 346 farmland townships to measure that road.</td>
-              <td class="is-site">Power, medium, and a vessel that stays sealed (section&nbsp;03)</td>
+            <tr class="is-risk">
+              <th scope="row">Where the bacteria are kept</th>
+              <td>Inside a licensed facility</td>
+              <td class="is-farm">Open ground, with no containment building, autoclave or biosafety officer</td>
+            </tr>
+            <tr class="is-risk">
+              <th scope="row">Who approves it</th>
+              <td>A dossier the company already holds</td>
+              <td class="is-farm">No approval route has been confirmed in Taiwan</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="pb-gapnote"><span class="pb-flag">Not measured yet</span> A cost
-      per litre for either route. The comparison above is what each route
-      requires. The price belongs on the Entrepreneurship page, with its
-      working, before it appears here.</p>
 
-      <div class="pb-earns" aria-label="What this section asks of a solution">
-        <p class="pb-earns__label">So the fermenter has to move</p>
+      <div class="pb-catch">
+        <p class="pb-catch__label">The catch</p>
+        <p class="pb-catch__claim">Making it on the farm puts live engineered bacteria on the farm.</p>
+        <p class="pb-catch__body">The protein a plant needs is made by
+        engineered cells, and a fermenter moved to the field brings those cells
+        with it. The protein has to reach the soil. The cells that make it must
+        stay out, on land that was never built to hold them.</p>
+      </div>
+
+      <div class="pb-earns">
+        <p class="pb-earns__label">Production has to be</p>
         <ul class="pb-earns__list">
-          <li><span class="pb-tag">On site</span><em>made beside the field that uses it, with no road to wait on</em></li>
+          <li class="pb-tag">On site</li>
+          <li class="pb-tag">Contained and biosafe</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════════════════════ 03  THE CATCH ═══ -->
-  <!-- Sources: hardware/bioreactor/index.html 1.1 and 5.2 (0.2 um PES, 2 mL
-       shell-side on LB, 0 colonies, cycle 1, 6 June 2026, single plating;
-       pump-head leak in cycle 1); safety-and-security/ scaffold (168 forms
-       spores; second containment layer not built); laws-and-regulations/
-       ("No Taiwan regulator has confirmed a contained-use classification"). -->
-  <section class="pb-band" id="catch" aria-labelledby="catch-title">
+  <!-- 03. The lab-to-field distance. The twelve-year path is illustrative and
+       says so on the page. 63.5 is from geospatial-analysis/. -->
+  <section class="pb-dist" id="distance" aria-labelledby="dist-title">
+    <div class="pb-inner pb-dist__head">
+      <p class="pb-index pb-index--dark"><span>03</span>The distance</p>
+      <h2 class="pb-title" id="dist-title">The newest protectants spend years in a lab before a farmer can buy one.</h2>
+      <p class="lede">What reaches a farm shop finished its testing long ago.
+      The protectants being discovered now sit in journals and university
+      labs, far from the people who would use them.</p>
+    </div>
+
+    <div class="jr" id="journey">
+      <div class="jr-stage">
+        <div class="jr-scene" id="jr-scene">
+<svg class="jr-svg" viewBox="0 0 6000 1000" preserveAspectRatio="xMinYMid slice" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="jr-sky" x1="0" x2="1" y1="0" y2="0">
+  <stop offset="0" stop-color="#06120d"/><stop offset=".3" stop-color="#0d231a"/>
+  <stop offset=".55" stop-color="#2a3a2c"/><stop offset=".75" stop-color="#7a5a3a"/>
+  <stop offset=".9" stop-color="#e2a468"/><stop offset="1" stop-color="#f6cf94"/>
+</linearGradient>
+<linearGradient id="jr-shade" x1="0" x2="0" y1="0" y2="1">
+  <stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset=".7" stop-color="#000" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="jr-ground" x1="0" x2="1">
+  <stop offset="0" stop-color="#050d09"/><stop offset=".6" stop-color="#15201a"/><stop offset="1" stop-color="#3a3322"/>
+</linearGradient>
+<radialGradient id="jr-sun"><stop offset="0" stop-color="#fff4d6"/><stop offset=".35" stop-color="#ffd58a" stop-opacity=".9"/><stop offset="1" stop-color="#ffb35c" stop-opacity="0"/></radialGradient>
+<radialGradient id="jr-lamp"><stop offset="0" stop-color="#ffe7a8" stop-opacity=".95"/><stop offset="1" stop-color="#ffcf70" stop-opacity="0"/></radialGradient>
+<radialGradient id="jr-glow"><stop offset="0" stop-color="#b9ffd8"/><stop offset=".25" stop-color="#35e08a" stop-opacity=".85"/><stop offset="1" stop-color="#35e08a" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="6000" height="1000" fill="url(#jr-sky)"/><rect width="6000" height="1000" fill="url(#jr-shade)"/>
+<g fill="#e9f5ee">
+<circle cx="473" cy="108" r="1.2" opacity="0.34"/>
+<circle cx="1171" cy="220" r="1.2" opacity="0.54"/>
+<circle cx="226" cy="75" r="2.8" opacity="0.37"/>
+<circle cx="48" cy="251" r="1.2" opacity="0.86"/>
+<circle cx="1570" cy="333" r="1.2" opacity="0.35"/>
+<circle cx="682" cy="538" r="1.2" opacity="0.52"/>
+<circle cx="96" cy="248" r="1.2" opacity="0.65"/>
+<circle cx="1269" cy="385" r="1.2" opacity="0.41"/>
+<circle cx="1607" cy="224" r="1.2" opacity="0.33"/>
+<circle cx="1518" cy="288" r="2.8" opacity="0.41"/>
+<circle cx="909" cy="510" r="2.2" opacity="0.38"/>
+<circle cx="2379" cy="393" r="1.6" opacity="0.11"/>
+<circle cx="413" cy="287" r="2.2" opacity="0.66"/>
+<circle cx="383" cy="540" r="1.2" opacity="0.56"/>
+<circle cx="140" cy="208" r="2.8" opacity="0.56"/>
+<circle cx="3358" cy="70" r="2.2" opacity="0.00"/>
+<circle cx="545" cy="288" r="2.8" opacity="0.33"/>
+<circle cx="51" cy="170" r="1.2" opacity="0.39"/>
+<circle cx="1902" cy="367" r="2.8" opacity="0.21"/>
+<circle cx="648" cy="378" r="1.2" opacity="0.69"/>
+<circle cx="559" cy="348" r="2.8" opacity="0.32"/>
+<circle cx="2240" cy="97" r="1.6" opacity="0.18"/>
+<circle cx="3079" cy="288" r="1.6" opacity="0.03"/>
+<circle cx="1225" cy="489" r="2.8" opacity="0.51"/>
+<circle cx="360" cy="246" r="2.2" opacity="0.65"/>
+<circle cx="632" cy="150" r="1.2" opacity="0.37"/>
+<circle cx="259" cy="151" r="2.8" opacity="0.74"/>
+<circle cx="168" cy="177" r="1.6" opacity="0.56"/>
+<circle cx="599" cy="324" r="1.6" opacity="0.60"/>
+<circle cx="1092" cy="351" r="1.2" opacity="0.40"/>
+<circle cx="2807" cy="525" r="2.8" opacity="0.08"/>
+<circle cx="674" cy="280" r="2.8" opacity="0.31"/>
+<circle cx="28" cy="139" r="1.6" opacity="0.42"/>
+<circle cx="1439" cy="83" r="1.6" opacity="0.36"/>
+<circle cx="3276" cy="349" r="1.2" opacity="0.00"/>
+<circle cx="1497" cy="107" r="2.2" opacity="0.47"/>
+<circle cx="1445" cy="277" r="1.2" opacity="0.45"/>
+<circle cx="3555" cy="272" r="2.8" opacity="0.00"/>
+<circle cx="110" cy="420" r="2.2" opacity="0.60"/>
+<circle cx="1856" cy="298" r="1.6" opacity="0.37"/>
+<circle cx="1141" cy="106" r="1.2" opacity="0.50"/>
+<circle cx="407" cy="364" r="1.2" opacity="0.64"/>
+<circle cx="321" cy="221" r="1.6" opacity="0.50"/>
+<circle cx="241" cy="312" r="2.2" opacity="0.65"/>
+<circle cx="1493" cy="440" r="1.6" opacity="0.43"/>
+<circle cx="2509" cy="415" r="1.6" opacity="0.11"/>
+<circle cx="1007" cy="410" r="1.2" opacity="0.54"/>
+<circle cx="933" cy="131" r="2.2" opacity="0.43"/>
+<circle cx="3202" cy="544" r="2.2" opacity="0.00"/>
+<circle cx="59" cy="274" r="2.2" opacity="0.46"/>
+<circle cx="1541" cy="498" r="1.2" opacity="0.32"/>
+<circle cx="1672" cy="446" r="1.2" opacity="0.39"/>
+<circle cx="79" cy="232" r="1.6" opacity="0.60"/>
+<circle cx="162" cy="440" r="2.2" opacity="0.39"/>
+<circle cx="3259" cy="405" r="2.8" opacity="0.00"/>
+<circle cx="3263" cy="407" r="1.6" opacity="0.00"/>
+<circle cx="6" cy="337" r="2.8" opacity="0.79"/>
+<circle cx="113" cy="460" r="2.8" opacity="0.69"/>
+<circle cx="545" cy="315" r="1.6" opacity="0.31"/>
+<circle cx="2406" cy="408" r="1.2" opacity="0.17"/>
+<circle cx="3181" cy="256" r="1.6" opacity="0.01"/>
+<circle cx="219" cy="161" r="2.2" opacity="0.59"/>
+<circle cx="2216" cy="200" r="2.8" opacity="0.26"/>
+<circle cx="23" cy="415" r="2.8" opacity="0.71"/>
+<circle cx="2491" cy="299" r="1.6" opacity="0.15"/>
+<circle cx="1123" cy="40" r="2.8" opacity="0.51"/>
+<circle cx="1472" cy="434" r="1.6" opacity="0.25"/>
+<circle cx="937" cy="407" r="1.2" opacity="0.38"/>
+<circle cx="1103" cy="319" r="1.2" opacity="0.55"/>
+<circle cx="21" cy="129" r="1.2" opacity="0.77"/>
+<circle cx="1063" cy="322" r="1.2" opacity="0.40"/>
+<circle cx="1490" cy="293" r="1.6" opacity="0.40"/>
+<circle cx="863" cy="307" r="2.8" opacity="0.47"/>
+<circle cx="292" cy="302" r="2.2" opacity="0.78"/>
+<circle cx="2935" cy="135" r="2.8" opacity="0.04"/>
+<circle cx="81" cy="260" r="1.2" opacity="0.70"/>
+<circle cx="783" cy="141" r="2.2" opacity="0.59"/>
+<circle cx="2960" cy="110" r="2.2" opacity="0.04"/>
+<circle cx="2877" cy="533" r="1.6" opacity="0.09"/>
+<circle cx="51" cy="490" r="1.6" opacity="0.88"/>
+<circle cx="2588" cy="114" r="2.8" opacity="0.18"/>
+<circle cx="704" cy="249" r="2.2" opacity="0.42"/>
+<circle cx="2004" cy="40" r="2.8" opacity="0.23"/>
+<circle cx="3" cy="202" r="2.2" opacity="0.64"/>
+<circle cx="26" cy="542" r="1.6" opacity="0.88"/>
+<circle cx="62" cy="168" r="1.2" opacity="0.83"/>
+<circle cx="167" cy="423" r="2.8" opacity="0.78"/>
+<circle cx="1779" cy="522" r="2.8" opacity="0.20"/>
+<circle cx="3093" cy="327" r="2.2" opacity="0.02"/>
+<circle cx="21" cy="388" r="2.8" opacity="0.84"/>
+<circle cx="339" cy="39" r="1.2" opacity="0.71"/>
+<circle cx="41" cy="475" r="1.2" opacity="0.50"/>
+<circle cx="81" cy="36" r="2.8" opacity="0.84"/>
+<circle cx="336" cy="97" r="1.6" opacity="0.78"/>
+<circle cx="3403" cy="166" r="1.6" opacity="0.00"/>
+<circle cx="442" cy="189" r="1.6" opacity="0.45"/>
+<circle cx="1034" cy="123" r="2.2" opacity="0.54"/>
+<circle cx="3564" cy="49" r="1.2" opacity="0.00"/>
+<circle cx="1232" cy="129" r="2.8" opacity="0.31"/>
+<circle cx="845" cy="372" r="2.8" opacity="0.53"/>
+<circle cx="1211" cy="492" r="2.2" opacity="0.46"/>
+<circle cx="3487" cy="208" r="1.6" opacity="0.00"/>
+<circle cx="537" cy="58" r="1.6" opacity="0.31"/>
+<circle cx="1547" cy="488" r="2.8" opacity="0.23"/>
+<circle cx="42" cy="467" r="2.2" opacity="0.67"/>
+<circle cx="1859" cy="54" r="1.6" opacity="0.19"/>
+<circle cx="841" cy="167" r="2.2" opacity="0.66"/>
+<circle cx="1216" cy="157" r="2.2" opacity="0.30"/>
+<circle cx="169" cy="204" r="1.2" opacity="0.58"/>
+<circle cx="1044" cy="135" r="1.2" opacity="0.28"/>
+<circle cx="2502" cy="105" r="1.2" opacity="0.13"/>
+<circle cx="411" cy="357" r="1.2" opacity="0.59"/>
+<circle cx="1145" cy="420" r="2.8" opacity="0.50"/>
+<circle cx="1996" cy="287" r="2.2" opacity="0.29"/>
+<circle cx="1627" cy="53" r="2.8" opacity="0.38"/>
+<circle cx="2476" cy="102" r="1.2" opacity="0.19"/>
+<circle cx="1368" cy="494" r="1.6" opacity="0.23"/>
+<circle cx="12" cy="361" r="1.2" opacity="0.56"/>
+<circle cx="860" cy="56" r="1.2" opacity="0.51"/>
+<circle cx="1801" cy="284" r="1.2" opacity="0.27"/>
+<circle cx="30" cy="515" r="1.2" opacity="0.71"/>
+<circle cx="27" cy="413" r="2.2" opacity="0.79"/>
+<circle cx="2665" cy="152" r="1.6" opacity="0.09"/>
+<circle cx="1658" cy="269" r="2.8" opacity="0.20"/>
+<circle cx="3041" cy="179" r="1.2" opacity="0.04"/>
+<circle cx="1625" cy="70" r="1.6" opacity="0.27"/>
+<circle cx="1665" cy="390" r="1.6" opacity="0.18"/>
+<circle cx="23" cy="170" r="1.2" opacity="0.73"/>
+<circle cx="1778" cy="181" r="2.2" opacity="0.28"/>
+<circle cx="912" cy="92" r="1.6" opacity="0.38"/>
+<circle cx="43" cy="276" r="2.2" opacity="0.60"/>
+<circle cx="2518" cy="533" r="2.8" opacity="0.20"/>
+<circle cx="651" cy="507" r="1.6" opacity="0.32"/>
+<circle cx="47" cy="419" r="2.2" opacity="0.86"/>
+<circle cx="95" cy="457" r="2.2" opacity="0.81"/>
+<circle cx="1911" cy="150" r="2.8" opacity="0.24"/>
+<circle cx="132" cy="524" r="2.8" opacity="0.56"/>
+<circle cx="2029" cy="246" r="2.8" opacity="0.20"/>
+<circle cx="2632" cy="31" r="2.2" opacity="0.15"/>
+<circle cx="79" cy="512" r="1.2" opacity="0.83"/>
+<circle cx="387" cy="224" r="2.8" opacity="0.50"/>
+<circle cx="2802" cy="70" r="2.8" opacity="0.10"/>
+<circle cx="2711" cy="176" r="1.2" opacity="0.13"/>
+<circle cx="377" cy="517" r="1.6" opacity="0.78"/>
+<circle cx="809" cy="194" r="2.2" opacity="0.59"/>
+<circle cx="781" cy="45" r="2.8" opacity="0.65"/>
+<circle cx="3225" cy="316" r="1.2" opacity="0.00"/>
+<circle cx="2055" cy="264" r="1.6" opacity="0.26"/>
+<circle cx="379" cy="55" r="1.6" opacity="0.40"/>
+<circle cx="739" cy="177" r="2.2" opacity="0.59"/>
+<circle cx="3448" cy="165" r="1.6" opacity="0.00"/>
+<circle cx="1257" cy="235" r="1.6" opacity="0.43"/>
+<circle cx="34" cy="290" r="2.8" opacity="0.65"/>
+<circle cx="865" cy="203" r="2.8" opacity="0.43"/>
+<circle cx="1218" cy="157" r="1.6" opacity="0.34"/>
+<circle cx="48" cy="154" r="2.2" opacity="0.79"/>
+<circle cx="203" cy="40" r="2.8" opacity="0.53"/>
+<circle cx="2124" cy="139" r="2.2" opacity="0.19"/>
+<circle cx="24" cy="174" r="2.2" opacity="0.42"/>
+<circle cx="1047" cy="357" r="1.6" opacity="0.28"/>
+<circle cx="2959" cy="230" r="2.8" opacity="0.05"/>
+<circle cx="442" cy="453" r="1.2" opacity="0.37"/>
+<circle cx="772" cy="427" r="2.8" opacity="0.67"/>
+<circle cx="996" cy="68" r="2.8" opacity="0.61"/>
+<circle cx="294" cy="87" r="1.6" opacity="0.40"/>
+<circle cx="3420" cy="87" r="2.8" opacity="0.00"/>
+<circle cx="2285" cy="31" r="1.6" opacity="0.14"/>
+<circle cx="3098" cy="366" r="2.2" opacity="0.04"/>
+<circle cx="1551" cy="305" r="2.8" opacity="0.38"/>
+<circle cx="70" cy="67" r="1.6" opacity="0.56"/>
+<circle cx="243" cy="343" r="1.2" opacity="0.60"/>
+<circle cx="3577" cy="175" r="2.2" opacity="0.00"/>
+<circle cx="2882" cy="277" r="1.6" opacity="0.07"/>
+<circle cx="6" cy="244" r="2.2" opacity="0.39"/>
+<circle cx="188" cy="490" r="2.8" opacity="0.38"/>
+<circle cx="251" cy="251" r="2.2" opacity="0.45"/>
+<circle cx="8" cy="206" r="2.8" opacity="0.55"/>
+<circle cx="681" cy="34" r="2.2" opacity="0.60"/>
+<circle cx="1052" cy="137" r="1.6" opacity="0.36"/>
+<circle cx="2519" cy="150" r="1.6" opacity="0.11"/>
+<circle cx="2915" cy="87" r="2.8" opacity="0.07"/>
+<circle cx="2957" cy="282" r="1.2" opacity="0.08"/>
+<circle cx="113" cy="235" r="1.6" opacity="0.36"/>
+<circle cx="1419" cy="246" r="1.2" opacity="0.26"/>
+<circle cx="854" cy="400" r="2.2" opacity="0.56"/>
+<circle cx="3584" cy="514" r="2.2" opacity="0.00"/>
+<circle cx="1669" cy="303" r="2.8" opacity="0.18"/>
+<circle cx="1725" cy="227" r="2.2" opacity="0.42"/>
+<circle cx="830" cy="87" r="1.2" opacity="0.38"/>
+<circle cx="548" cy="527" r="1.2" opacity="0.55"/>
+<circle cx="2190" cy="228" r="2.2" opacity="0.26"/>
+<circle cx="796" cy="56" r="2.8" opacity="0.35"/>
+<circle cx="1193" cy="262" r="2.2" opacity="0.35"/>
+<circle cx="2960" cy="46" r="2.8" opacity="0.04"/>
+<circle cx="1547" cy="240" r="2.8" opacity="0.20"/>
+<circle cx="25" cy="508" r="2.2" opacity="0.46"/>
+<circle cx="25" cy="345" r="2.2" opacity="0.50"/>
+<circle cx="3330" cy="351" r="2.2" opacity="0.00"/>
+<circle cx="1844" cy="511" r="2.2" opacity="0.16"/>
+<circle cx="2174" cy="507" r="1.2" opacity="0.12"/>
+<circle cx="263" cy="277" r="2.8" opacity="0.80"/>
+<circle cx="650" cy="161" r="2.8" opacity="0.64"/>
+<circle cx="95" cy="288" r="1.2" opacity="0.77"/>
+<circle cx="2086" cy="458" r="1.6" opacity="0.25"/>
+<circle cx="484" cy="196" r="2.2" opacity="0.67"/>
+<circle cx="1417" cy="296" r="2.8" opacity="0.43"/>
+<circle cx="291" cy="64" r="1.2" opacity="0.56"/>
+<circle cx="1206" cy="114" r="2.8" opacity="0.53"/>
+<circle cx="3521" cy="168" r="1.2" opacity="0.00"/>
+<circle cx="759" cy="544" r="2.8" opacity="0.35"/>
+<circle cx="95" cy="270" r="1.6" opacity="0.74"/>
+<circle cx="2670" cy="376" r="1.2" opacity="0.14"/>
+<circle cx="397" cy="175" r="2.2" opacity="0.49"/>
+<circle cx="2084" cy="134" r="1.6" opacity="0.16"/>
+<circle cx="267" cy="176" r="1.6" opacity="0.49"/>
+<circle cx="680" cy="546" r="1.6" opacity="0.56"/>
+<circle cx="58" cy="271" r="1.2" opacity="0.41"/>
+<circle cx="942" cy="456" r="2.8" opacity="0.61"/>
+<circle cx="11" cy="183" r="1.2" opacity="0.39"/>
+<circle cx="1438" cy="461" r="1.6" opacity="0.48"/>
+<circle cx="608" cy="480" r="2.8" opacity="0.56"/>
+<circle cx="2275" cy="376" r="1.2" opacity="0.12"/>
+<circle cx="1419" cy="352" r="1.6" opacity="0.21"/>
+<circle cx="516" cy="53" r="2.2" opacity="0.32"/>
+<circle cx="2054" cy="505" r="1.2" opacity="0.29"/>
+<circle cx="720" cy="223" r="2.2" opacity="0.31"/>
+<circle cx="7" cy="288" r="2.8" opacity="0.39"/>
+<circle cx="58" cy="236" r="1.6" opacity="0.69"/>
+<circle cx="48" cy="115" r="2.2" opacity="0.57"/>
+<circle cx="372" cy="190" r="1.2" opacity="0.47"/>
+<circle cx="1294" cy="216" r="2.8" opacity="0.22"/>
+<circle cx="2231" cy="447" r="1.6" opacity="0.18"/>
+<circle cx="707" cy="520" r="2.8" opacity="0.66"/>
+<circle cx="768" cy="457" r="2.8" opacity="0.51"/>
+<circle cx="586" cy="432" r="1.6" opacity="0.30"/>
+<circle cx="1234" cy="363" r="2.8" opacity="0.25"/>
+<circle cx="1532" cy="223" r="1.6" opacity="0.23"/>
+<circle cx="372" cy="301" r="1.2" opacity="0.37"/>
+<circle cx="999" cy="449" r="1.6" opacity="0.36"/>
+<circle cx="2615" cy="53" r="2.8" opacity="0.10"/>
+<circle cx="1468" cy="361" r="1.2" opacity="0.46"/>
+<circle cx="1524" cy="459" r="1.6" opacity="0.37"/>
+<circle cx="2725" cy="353" r="1.6" opacity="0.13"/>
+<circle cx="169" cy="143" r="2.8" opacity="0.82"/>
+<circle cx="128" cy="217" r="1.6" opacity="0.47"/>
+<circle cx="2017" cy="497" r="1.2" opacity="0.32"/>
+<circle cx="2644" cy="380" r="2.2" opacity="0.08"/>
+<circle cx="1433" cy="316" r="2.2" opacity="0.40"/>
+<circle cx="433" cy="160" r="2.8" opacity="0.62"/>
+<circle cx="844" cy="258" r="1.2" opacity="0.27"/>
+<circle cx="3511" cy="272" r="2.8" opacity="0.00"/>
+<circle cx="2302" cy="268" r="1.6" opacity="0.23"/>
+<circle cx="693" cy="65" r="2.2" opacity="0.47"/>
+<circle cx="49" cy="260" r="1.2" opacity="0.38"/>
+<circle cx="92" cy="510" r="2.2" opacity="0.76"/>
+<circle cx="1077" cy="58" r="2.8" opacity="0.48"/>
+<circle cx="2324" cy="43" r="1.2" opacity="0.25"/>
+<circle cx="2054" cy="454" r="1.6" opacity="0.16"/>
+<circle cx="2893" cy="180" r="1.6" opacity="0.08"/>
+<circle cx="1998" cy="145" r="2.2" opacity="0.26"/>
+</g>
+<circle cx="5560" cy="600" r="420" fill="url(#jr-sun)"/><circle cx="5560" cy="600" r="70" fill="#fff1cf"/>
+<g class="jr-summers">
+<g class="jr-summer" data-y="1" transform="translate(1425 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="2" transform="translate(1750 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="3" transform="translate(2075 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="4" transform="translate(2400 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="5" transform="translate(2725 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="6" transform="translate(3050 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="7" transform="translate(3375 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="8" transform="translate(3700 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="9" transform="translate(4025 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="10" transform="translate(4350 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="11" transform="translate(4675 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+<g class="jr-summer" data-y="12" transform="translate(5000 250)"><circle r="15"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-32" transform="rotate(315)"/></g>
+</g>
+<g id="jr-far"><path d="M-400,1000 L-400,597.8 L-360,594.8 L-320,593.0 L-280,592.5 L-240,593.4 L-200,595.5 L-160,598.3 L-120,601.0 L-80,603.0 L-40,603.5 L0,602.2 L40,598.8 L80,593.4 L120,586.4 L160,578.4 L200,570.1 L240,562.5 L280,556.1 L320,551.4 L360,548.7 L400,547.8 L440,548.4 L480,550.0 L520,551.8 L560,553.2 L600,553.8 L640,553.4 L680,551.8 L720,549.4 L760,546.7 L800,544.4 L840,543.1 L880,543.6 L920,546.1 L960,550.9 L1000,557.7 L1040,566.2 L1080,575.6 L1120,585.2 L1160,594.1 L1200,601.8 L1240,607.7 L1280,611.7 L1320,614.0 L1360,614.8 L1400,614.9 L1440,614.8 L1480,615.2 L1520,616.6 L1560,619.2 L1600,623.0 L1640,627.6 L1680,632.6 L1720,637.3 L1760,640.9 L1800,642.9 L1840,643.0 L1880,641.0 L1920,637.2 L1960,632.0 L2000,626.1 L2040,620.2 L2080,615.3 L2120,611.8 L2160,610.1 L2200,610.4 L2240,612.5 L2280,615.8 L2320,619.8 L2360,623.7 L2400,626.9 L2440,628.9 L2480,629.5 L2520,628.6 L2560,626.6 L2600,624.1 L2640,621.7 L2680,620.0 L2720,619.6 L2760,620.7 L2800,623.5 L2840,627.6 L2880,632.7 L2920,637.8 L2960,642.4 L3000,645.6 L3040,646.9 L3080,646.0 L3120,642.8 L3160,637.6 L3200,631.0 L3240,623.6 L3280,616.3 L3320,609.5 L3360,604.0 L3400,599.8 L3440,597.0 L3480,595.2 L3520,593.9 L3560,592.5 L3600,590.4 L3640,587.0 L3680,582.2 L3720,575.8 L3760,568.4 L3800,560.2 L3840,552.2 L3880,545.1 L3920,539.5 L3960,536.0 L4000,534.9 L4040,536.2 L4080,539.4 L4120,544.1 L4160,549.5 L4200,554.9 L4240,559.5 L4280,563.0 L4320,565.1 L4360,565.9 L4400,565.7 L4440,565.1 L4480,564.8 L4520,565.3 L4560,567.2 L4600,570.6 L4640,575.5 L4680,581.7 L4720,588.5 L4760,595.2 L4800,601.2 L4840,605.7 L4880,608.2 L4920,608.7 L4960,607.1 L5000,603.8 L5040,599.6 L5080,595.1 L5120,591.1 L5160,588.2 L5200,586.9 L5240,587.4 L5280,589.5 L5320,592.8 L5360,596.7 L5400,600.7 L5440,603.9 L5480,606.1 L5520,606.9 L5560,606.3 L5600,604.8 L5640,602.8 L5680,601.0 L5720,600.1 L5760,600.7 L5800,603.2 L5840,607.7 L5880,614.1 L5920,621.8 L5960,630.2 L6000,638.5 L6040,645.9 L6080,651.7 L6120,655.6 L6160,657.4 L6200,657.4 L6240,655.8 L6280,653.4 L6320,650.7 L6360,648.5 L6400,647.1 L6400,1000 Z" fill="#1b2e24" opacity=".7"/></g>
+<g id="jr-mid"><path d="M-400,1000 L-400,713.8 L-360,717.0 L-320,720.0 L-280,722.4 L-240,723.5 L-200,723.2 L-160,721.2 L-120,717.6 L-80,712.5 L-40,706.6 L0,700.2 L40,694.0 L80,688.5 L120,684.0 L160,680.6 L200,678.3 L240,677.0 L280,676.1 L320,675.3 L360,674.1 L400,672.1 L440,669.3 L480,665.5 L520,661.1 L560,656.3 L600,651.7 L640,647.8 L680,645.1 L720,643.9 L760,644.3 L800,646.2 L840,649.3 L880,653.2 L920,657.4 L960,661.2 L1000,664.3 L1040,666.2 L1080,666.9 L1120,666.4 L1160,665.1 L1200,663.3 L1240,661.5 L1280,660.2 L1320,659.8 L1360,660.3 L1400,661.9 L1440,664.2 L1480,666.9 L1520,669.5 L1560,671.6 L1600,672.7 L1640,672.5 L1680,670.9 L1720,668.2 L1760,664.5 L1800,660.5 L1840,656.6 L1880,653.4 L1920,651.4 L1960,650.8 L2000,651.7 L2040,654.0 L2080,657.4 L2120,661.4 L2160,665.4 L2200,669.2 L2240,672.2 L2280,674.3 L2320,675.6 L2360,676.1 L2400,676.4 L2440,676.9 L2480,677.9 L2520,680.0 L2560,683.3 L2600,687.8 L2640,693.5 L2680,699.8 L2720,706.3 L2760,712.5 L2800,717.8 L2840,721.7 L2880,724.0 L2920,724.7 L2960,723.9 L3000,722.0 L3040,719.4 L3080,716.7 L3120,714.3 L3160,712.6 L3200,711.8 L3240,711.7 L3280,712.2 L3320,712.9 L3360,713.3 L3400,713.0 L3440,711.6 L3480,709.0 L3520,705.1 L3560,700.1 L3600,694.4 L3640,688.5 L3680,683.0 L3720,678.4 L3760,675.2 L3800,673.4 L3840,673.1 L3880,674.1 L3920,676.0 L3960,678.3 L4000,680.5 L4040,682.1 L4080,682.8 L4120,682.4 L4160,680.9 L4200,678.8 L4240,676.2 L4280,673.8 L4320,671.9 L4360,670.9 L4400,671.0 L4440,672.2 L4480,674.2 L4520,676.8 L4560,679.3 L4600,681.3 L4640,682.2 L4680,681.8 L4720,679.9 L4760,676.5 L4800,672.0 L4840,666.7 L4880,661.3 L4920,656.2 L4960,651.9 L5000,648.8 L5040,647.0 L5080,646.4 L5120,646.7 L5160,647.7 L5200,648.7 L5240,649.3 L5280,649.3 L5320,648.5 L5360,646.8 L5400,644.6 L5440,642.1 L5480,640.0 L5520,638.6 L5560,638.5 L5600,639.9 L5640,643.0 L5680,647.7 L5720,653.5 L5760,660.0 L5800,666.8 L5840,673.1 L5880,678.6 L5920,682.9 L5960,685.9 L6000,687.8 L6040,688.7 L6080,689.2 L6120,689.7 L6160,690.5 L6200,692.1 L6240,694.6 L6280,697.9 L6320,701.8 L6360,705.9 L6400,709.7 L6400,1000 Z" fill="#12211a"/></g>
+<rect x="-400" y="760" width="6800" height="240" fill="url(#jr-ground)"/>
+<line x1="1000" y1="760" x2="5050" y2="760" stroke="#e8d9b0" stroke-opacity=".28" stroke-width="3" stroke-dasharray="4 14" stroke-linecap="round"/>
+<line id="jr-trail" x1="1100" y1="760" x2="1100" y2="760" stroke="#35e08a" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+<g class="jr-lab">
+<rect x="360" y="370" width="660" height="390" fill="#040a07"/>
+<path d="M340 372 L690 300 L1040 372 Z" fill="#040a07"/>
+<rect x="410" y="430" width="70" height="90" fill="#122019"/>
+<rect x="900" y="430" width="70" height="90" fill="#122019"/>
+<clipPath id="jr-win"><rect x="520" y="440" width="340" height="230"/></clipPath>
+<rect x="520" y="440" width="340" height="230" fill="#f0d496"/>
+<g clip-path="url(#jr-win)"><circle cx="640" cy="560" r="170" fill="url(#jr-lamp)"/>
+<rect x="540" y="486" width="130" height="5" fill="#b89a62"/><rect x="548" y="462" width="12" height="24" rx="2" fill="#c7a970"/><rect x="570" y="468" width="12" height="18" rx="2" fill="#c7a970"/><rect x="592" y="462" width="12" height="24" rx="2" fill="#c7a970"/><rect x="614" y="468" width="12" height="18" rx="2" fill="#c7a970"/><rect x="636" y="462" width="12" height="24" rx="2" fill="#c7a970"/><rect x="658" y="468" width="12" height="18" rx="2" fill="#c7a970"/>
+<rect x="742" y="590" width="10" height="80" fill="#2b2113"/>
+<rect x="548" y="652" width="44" height="8" rx="3" fill="#1a140c"/><path d="M570 654 L586 580 L632 548" stroke="#1a140c" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M618 534 L664 552 L644 578 Z" fill="#1a140c"/>
+<circle cx="706" cy="566" r="24" fill="#1a140c"/><circle cx="722" cy="552" r="10" fill="#1a140c"/>
+<path d="M654 670 Q654 610 702 598 Q744 602 754 640 L758 670 Z" fill="#1a140c"/>
+<path d="M690 620 Q720 640 790 632" stroke="#1a140c" stroke-width="13" fill="none" stroke-linecap="round"/>
+<rect x="776" y="648" width="66" height="12" rx="2" fill="#1a140c"/><path d="M826 650 L826 604 Q826 584 810 576 L796 566" stroke="#1a140c" stroke-width="10" fill="none" stroke-linecap="round"/><rect x="778" y="624" width="44" height="6" fill="#1a140c"/><path d="M792 570 L786 552" stroke="#1a140c" stroke-width="8" stroke-linecap="round"/>
+<rect x="520" y="660" width="340" height="10" fill="#2b2113"/></g>
+<text x="690" y="410" text-anchor="middle" class="jr-sign">UNIVERSITY LAB</text>
+</g>
+<g class="jr-posts">
+<g class="jr-post" data-y="1"><line x1="1425" y1="760" x2="1425" y2="714"/><circle cx="1425" cy="710" r="5"/><text x="1425" y="692" text-anchor="middle" class="jr-yr">YEAR 1</text><text x="1425" y="806" text-anchor="middle" class="jr-step">Published</text></g>
+<g class="jr-post" data-y="2"><line x1="1750" y1="760" x2="1750" y2="714"/><circle cx="1750" cy="710" r="5"/><text x="1750" y="692" text-anchor="middle" class="jr-yr">YEAR 2</text></g>
+<g class="jr-post" data-y="3"><line x1="2075" y1="760" x2="2075" y2="714"/><circle cx="2075" cy="710" r="5"/><text x="2075" y="692" text-anchor="middle" class="jr-yr">YEAR 3</text><text x="2075" y="806" text-anchor="middle" class="jr-step">Greenhouse trials</text></g>
+<g class="jr-post" data-y="4"><line x1="2400" y1="760" x2="2400" y2="714"/><circle cx="2400" cy="710" r="5"/><text x="2400" y="692" text-anchor="middle" class="jr-yr">YEAR 4</text></g>
+<g class="jr-post" data-y="5"><line x1="2725" y1="760" x2="2725" y2="714"/><circle cx="2725" cy="710" r="5"/><text x="2725" y="692" text-anchor="middle" class="jr-yr">YEAR 5</text><text x="2725" y="806" text-anchor="middle" class="jr-step">Field trials</text></g>
+<g class="jr-post" data-y="6"><line x1="3050" y1="760" x2="3050" y2="714"/><circle cx="3050" cy="710" r="5"/><text x="3050" y="692" text-anchor="middle" class="jr-yr">YEAR 6</text></g>
+<g class="jr-post" data-y="7"><line x1="3375" y1="760" x2="3375" y2="714"/><circle cx="3375" cy="710" r="5"/><text x="3375" y="692" text-anchor="middle" class="jr-yr">YEAR 7</text><text x="3375" y="806" text-anchor="middle" class="jr-step">Formulation</text></g>
+<g class="jr-post" data-y="8"><line x1="3700" y1="760" x2="3700" y2="714"/><circle cx="3700" cy="710" r="5"/><text x="3700" y="692" text-anchor="middle" class="jr-yr">YEAR 8</text></g>
+<g class="jr-post" data-y="9"><line x1="4025" y1="760" x2="4025" y2="714"/><circle cx="4025" cy="710" r="5"/><text x="4025" y="692" text-anchor="middle" class="jr-yr">YEAR 9</text><text x="4025" y="806" text-anchor="middle" class="jr-step">Safety review</text></g>
+<g class="jr-post" data-y="10"><line x1="4350" y1="760" x2="4350" y2="714"/><circle cx="4350" cy="710" r="5"/><text x="4350" y="692" text-anchor="middle" class="jr-yr">YEAR 10</text><text x="4350" y="806" text-anchor="middle" class="jr-step">Registration</text></g>
+<g class="jr-post" data-y="11"><line x1="4675" y1="760" x2="4675" y2="714"/><circle cx="4675" cy="710" r="5"/><text x="4675" y="692" text-anchor="middle" class="jr-yr">YEAR 11</text><text x="4675" y="806" text-anchor="middle" class="jr-step">Manufacturing</text></g>
+<g class="jr-post" data-y="12"><line x1="5000" y1="760" x2="5000" y2="714"/><circle cx="5000" cy="710" r="5"/><text x="5000" y="692" text-anchor="middle" class="jr-yr">YEAR 12</text><text x="5000" y="806" text-anchor="middle" class="jr-step">On a farm shop shelf</text></g>
+</g>
+<g class="jr-shop"><rect x="4940" y="640" width="120" height="120" fill="#1f1810"/><rect x="4930" y="626" width="140" height="16" fill="#2b2216"/><rect x="4956" y="664" width="88" height="6" fill="#6b5536"/><rect x="4956" y="702" width="88" height="6" fill="#6b5536"/><rect x="4962" y="648" width="12" height="16" fill="#c9a36a"/><rect x="4980" y="650" width="12" height="14" fill="#c9a36a"/><rect x="5010" y="686" width="12" height="16" fill="#c9a36a"/></g>
+<g class="jr-farm">
+<rect x="5120" y="752" width="880" height="30" fill="#a9884f" opacity=".45"/>
+<g stroke="#3f5a2a" stroke-width="4" stroke-linecap="round">
+<path d="M5140 766 q-4 -15 -10 -25 M5140 766 q2 -17 8 -26 M5140 766 l0 -20"/>
+<path d="M5186 766 q-4 -17 -10 -29 M5186 766 q2 -20 8 -30 M5186 766 l0 -23"/>
+<path d="M5232 766 q-4 -16 -10 -26 M5232 766 q2 -19 8 -28 M5232 766 l0 -21"/>
+<path d="M5278 766 q-4 -18 -10 -29 M5278 766 q2 -20 8 -31 M5278 766 l0 -23"/>
+<path d="M5324 766 q-4 -18 -10 -30 M5324 766 q2 -21 8 -31 M5324 766 l0 -24"/>
+<path d="M5370 766 q-4 -14 -10 -23 M5370 766 q2 -16 8 -24 M5370 766 l0 -18"/>
+<path d="M5416 766 q-4 -13 -10 -22 M5416 766 q2 -16 8 -23 M5416 766 l0 -18"/>
+<path d="M5462 766 q-4 -19 -10 -32 M5462 766 q2 -22 8 -34 M5462 766 l0 -26"/>
+<path d="M5508 766 q-4 -15 -10 -25 M5508 766 q2 -18 8 -26 M5508 766 l0 -20"/>
+<path d="M5554 766 q-4 -15 -10 -25 M5554 766 q2 -17 8 -26 M5554 766 l0 -20"/>
+<path d="M5600 766 q-4 -20 -10 -34 M5600 766 q2 -24 8 -36 M5600 766 l0 -27"/>
+<path d="M5646 766 q-4 -17 -10 -28 M5646 766 q2 -19 8 -29 M5646 766 l0 -22"/>
+<path d="M5692 766 q-4 -19 -10 -32 M5692 766 q2 -22 8 -34 M5692 766 l0 -26"/>
+<path d="M5738 766 q-4 -17 -10 -28 M5738 766 q2 -19 8 -29 M5738 766 l0 -22"/>
+<path d="M5784 766 q-4 -18 -10 -30 M5784 766 q2 -21 8 -31 M5784 766 l0 -24"/>
+<path d="M5830 766 q-4 -14 -10 -24 M5830 766 q2 -17 8 -25 M5830 766 l0 -19"/>
+<path d="M5876 766 q-4 -18 -10 -30 M5876 766 q2 -21 8 -31 M5876 766 l0 -24"/>
+<path d="M5922 766 q-4 -19 -10 -32 M5922 766 q2 -23 8 -34 M5922 766 l0 -26"/>
+<path d="M5968 766 q-4 -17 -10 -28 M5968 766 q2 -20 8 -30 M5968 766 l0 -23"/>
+<path d="M5120 800 q-4 -23 -10 -39 M5120 800 q2 -27 8 -41 M5120 800 l0 -31"/>
+<path d="M5177 800 q-4 -23 -10 -38 M5177 800 q2 -26 8 -39 M5177 800 l0 -30"/>
+<path d="M5234 800 q-4 -17 -10 -28 M5234 800 q2 -20 8 -30 M5234 800 l0 -23"/>
+<path d="M5291 800 q-4 -23 -10 -39 M5291 800 q2 -27 8 -41 M5291 800 l0 -31"/>
+<path d="M5348 800 q-4 -22 -10 -36 M5348 800 q2 -25 8 -38 M5348 800 l0 -29"/>
+<path d="M5405 800 q-4 -19 -10 -32 M5405 800 q2 -22 8 -34 M5405 800 l0 -26"/>
+<path d="M5462 800 q-4 -17 -10 -28 M5462 800 q2 -20 8 -29 M5462 800 l0 -22"/>
+<path d="M5519 800 q-4 -24 -10 -40 M5519 800 q2 -28 8 -43 M5519 800 l0 -32"/>
+<path d="M5576 800 q-4 -21 -10 -35 M5576 800 q2 -24 8 -36 M5576 800 l0 -28"/>
+<path d="M5633 800 q-4 -23 -10 -38 M5633 800 q2 -27 8 -40 M5633 800 l0 -31"/>
+<path d="M5690 800 q-4 -24 -10 -41 M5690 800 q2 -28 8 -43 M5690 800 l0 -33"/>
+<path d="M5747 800 q-4 -23 -10 -38 M5747 800 q2 -27 8 -40 M5747 800 l0 -31"/>
+<path d="M5804 800 q-4 -25 -10 -41 M5804 800 q2 -29 8 -43 M5804 800 l0 -33"/>
+<path d="M5861 800 q-4 -20 -10 -33 M5861 800 q2 -23 8 -35 M5861 800 l0 -27"/>
+<path d="M5918 800 q-4 -24 -10 -40 M5918 800 q2 -28 8 -41 M5918 800 l0 -32"/>
+<path d="M5975 800 q-4 -21 -10 -34 M5975 800 q2 -24 8 -36 M5975 800 l0 -27"/>
+<path d="M5100 844 q-4 -31 -10 -52 M5100 844 q2 -36 8 -54 M5100 844 l0 -41"/>
+<path d="M5171 844 q-4 -30 -10 -50 M5171 844 q2 -35 8 -53 M5171 844 l0 -40"/>
+<path d="M5242 844 q-4 -22 -10 -36 M5242 844 q2 -25 8 -38 M5242 844 l0 -29"/>
+<path d="M5313 844 q-4 -22 -10 -37 M5313 844 q2 -26 8 -38 M5313 844 l0 -29"/>
+<path d="M5384 844 q-4 -23 -10 -38 M5384 844 q2 -27 8 -40 M5384 844 l0 -31"/>
+<path d="M5455 844 q-4 -31 -10 -52 M5455 844 q2 -36 8 -55 M5455 844 l0 -42"/>
+<path d="M5526 844 q-4 -25 -10 -42 M5526 844 q2 -30 8 -44 M5526 844 l0 -34"/>
+<path d="M5597 844 q-4 -27 -10 -46 M5597 844 q2 -32 8 -48 M5597 844 l0 -37"/>
+<path d="M5668 844 q-4 -24 -10 -40 M5668 844 q2 -28 8 -42 M5668 844 l0 -32"/>
+<path d="M5739 844 q-4 -26 -10 -44 M5739 844 q2 -30 8 -46 M5739 844 l0 -35"/>
+<path d="M5810 844 q-4 -25 -10 -41 M5810 844 q2 -29 8 -43 M5810 844 l0 -33"/>
+<path d="M5881 844 q-4 -24 -10 -41 M5881 844 q2 -28 8 -43 M5881 844 l0 -33"/>
+<path d="M5952 844 q-4 -27 -10 -45 M5952 844 q2 -31 8 -47 M5952 844 l0 -36"/>
+</g>
+<rect x="5760" y="620" width="200" height="140" fill="#2a1f14"/><path d="M5740 624 L5860 560 L5980 624 Z" fill="#241a10"/><rect x="5790" y="660" width="44" height="40" fill="#ffcf85"/>
+<g class="jr-farmer" fill="none" stroke="#2a1d12" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5442 752 L5460 706 L5478 664" stroke-width="16"/><path d="M5502 752 L5498 706 L5488 664" stroke-width="16"/>
+<path d="M5486 664 Q5462 628 5420 622" stroke-width="36"/>
+<path d="M5418 628 Q5418 672 5404 712" stroke-width="10"/>
+<path d="M5444 636 Q5458 664 5452 690" stroke-width="9"/>
+<circle cx="5396" cy="632" r="17" fill="#2a1d12" stroke="none"/>
+<path d="M5340 628 L5386 590 L5448 614 Q5394 634 5340 628 Z" fill="#2a1d12" stroke="none"/>
+</g>
+<g stroke="#6f9a44" stroke-width="3" stroke-linecap="round" fill="none"><path d="M5404 734 l-5 -20 M5404 734 l1 -22 M5404 734 l7 -18"/><path d="M5452 700 l-8 -22 M5452 700 l0 -26 M5452 700 l9 -21 M5452 700 l-3 -24"/></g>
+<ellipse cx="5404" cy="752" rx="22" ry="4" fill="none" stroke="#f3d7a4" stroke-opacity=".5" stroke-width="2"/>
+</g>
+<g id="jr-orb" transform="translate(806 640)"><circle r="90" fill="url(#jr-glow)"/><circle r="9" fill="#dfffee"/></g>
+</svg>
+        </div>
+
+        <div class="jr-hud" aria-hidden="true">
+          <div class="jr-hud__year"><span>Year</span><b id="jr-year">12</b></div>
+          <div class="jr-hud__farmer">
+            <p class="jr-hud__who">A farmer who was 63 the year it was discovered</p>
+            <div class="jr-hud__row"><span>Her age now</span><b id="jr-age">75</b></div>
+            <div class="jr-hud__row"><span>Summers farmed without it</span><b id="jr-summers">12</b></div>
+          </div>
+        </div>
+
+        <p class="jr-end" id="jr-end">When it finally reaches her shelf, she is 75.
+        What she can buy today left a lab when she was about 51.</p>
+        <p class="jr-note">An illustrative twelve-year path. Many take longer.</p>
+      </div>
+      <div class="jr-runway" aria-hidden="true"></div>
+    </div>
+    <p class="visually-hidden">Illustration: a new protectant is discovered in a
+    university lab at night and travels for twelve years through publication,
+    greenhouse and field trials, formulation, safety review, registration and
+    manufacturing before it reaches a farm shop shelf at dawn. A farmer who was
+    63 when it was discovered is 75 when it arrives.</p>
+
     <div class="pb-inner">
-      <header class="pb-head">
-        <p class="pb-index"><span>03</span>The catch</p>
-        <h2 class="pb-title" id="catch-title">Making it on the farm puts live engineered bacteria on the farm.</h2>
-        <p class="lede">Move the fermenter to the field and the organism comes
-        with it. A farm has no containment building, no autoclave and no
-        biosafety officer, and our chassis, <i>B.&nbsp;subtilis</i> 168, forms
-        spores. The protectant has to get into the soil. The bacteria that make
-        it must not.</p>
-      </header>
-
-      <div class="pb-catchgrid">
-        <figure class="pb-wall">
-          <svg viewBox="0 0 520 300" role="img" aria-labelledby="wall-t wall-d">
-            <title id="wall-t">Containment by one wall</title>
-            <desc id="wall-d">Engineered cells on the left side of a membrane wall. Protein molecules cross the wall to the right and flow down into the root zone. The cells are stopped at the wall.</desc>
-            <defs>
-              <pattern id="pores" width="10" height="16" patternUnits="userSpaceOnUse">
-                <rect width="10" height="16" fill="var(--wall)"/>
-                <rect x="3" y="6" width="4" height="4" fill="var(--paper)"/>
-              </pattern>
-              <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0 0L10 5L0 10z" fill="var(--leaf-700)"/>
-              </marker>
-            </defs>
-            <rect x="0" y="0" width="520" height="300" fill="var(--paper)"/>
-            <!-- culture side -->
-            <rect x="20" y="30" width="210" height="190" rx="10" fill="var(--cell-bg)"/>
-            <text x="36" y="56" class="svg-lab">Culture side</text>
-            <text x="36" y="74" class="svg-sub">engineered cells, sealed in</text>
-            <g class="svg-cells">
-              <rect x="50" y="100" width="34" height="14" rx="7"/>
-              <rect x="110" y="92" width="34" height="14" rx="7" transform="rotate(20 127 99)"/>
-              <rect x="70" y="140" width="34" height="14" rx="7" transform="rotate(-15 87 147)"/>
-              <rect x="140" y="150" width="34" height="14" rx="7"/>
-              <rect x="160" y="112" width="34" height="14" rx="7" transform="rotate(-30 177 119)"/>
-              <rect x="44" y="180" width="34" height="14" rx="7" transform="rotate(10 61 187)"/>
-              <rect x="120" y="186" width="34" height="14" rx="7"/>
-            </g>
-            <!-- stopped cell -->
-            <rect x="196" y="126" width="34" height="14" rx="7" class="svg-stopped"/>
-            <!-- wall -->
-            <rect x="238" y="24" width="14" height="202" fill="url(#pores)"/>
-            <text x="245" y="16" text-anchor="middle" class="svg-sub">0.2&#8201;&#181;m membrane</text>
-            <!-- protein side -->
-            <rect x="260" y="30" width="240" height="190" rx="10" fill="var(--prot-bg)"/>
-            <text x="276" y="56" class="svg-lab">Harvest side</text>
-            <text x="276" y="74" class="svg-sub">protein only</text>
-            <g class="svg-prot">
-              <circle cx="222" cy="98" r="4.5"/><circle cx="274" cy="102" r="4.5"/>
-              <circle cx="310" cy="120" r="4.5"/><circle cx="296" cy="160" r="4.5"/>
-              <circle cx="350" cy="140" r="4.5"/><circle cx="380" cy="104" r="4.5"/>
-              <circle cx="420" cy="170" r="4.5"/><circle cx="215" cy="176" r="4.5"/>
-            </g>
-            <path d="M232 98 H268" stroke="var(--leaf-700)" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
-            <path d="M230 176 H286" stroke="var(--leaf-700)" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
-            <path d="M440 190 V258" stroke="var(--leaf-700)" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
-            <!-- soil -->
-            <path d="M0 262 H520" stroke="var(--soil)" stroke-width="2"/>
-            <text x="452" y="286" class="svg-lab" text-anchor="end">Root zone</text>
-            <text x="20" y="286" class="svg-sub">what must never reach it: the cells</text>
-          </svg>
-          <figcaption>As designed. What crosses is set by pore size alone, so
-          vesicles and cell debris can cross too. A second containment stage
-          has not been built.</figcaption>
-        </figure>
-
-        <ol class="pb-tests">
-          <li>
-            <b>Cells stay behind the wall.</b>
-            <span>2&nbsp;mL of harvest-side medium plated on LB agar grew
-            0&nbsp;colonies. <span class="pb-flag">One plating</span>
-            cycle&nbsp;1, 6&nbsp;June&nbsp;2026. Replicates and log reduction
-            are not measured.</span>
-          </li>
-          <li>
-            <b>Nobody opens the vessel.</b>
-            <span>Every opening is a containment event, so the loop is
-            harvested through the membrane and read by an in-line photometer.</span>
-          </li>
-          <li>
-            <b>A leak counts as a breach.</b>
-            <span>Cycle&nbsp;1 leaked at the pump head. We logged it as lost
-            containment, and the next build changed because of it.</span>
-          </li>
-          <li>
-            <b>A regulator has to agree.</b>
-            <span><span class="pb-flag pb-flag--open">Open</span> No Taiwan
-            regulator has yet confirmed a contained-use classification for a
-            device like this.</span>
-          </li>
-        </ol>
-      </div>
-
-      <div class="pb-earns" aria-label="What this section asks of a solution">
-        <p class="pb-earns__label">So the machine has to be</p>
+      <div class="pb-earns pb-earns--dark">
+        <p class="pb-earns__label">The farmer needs</p>
         <ul class="pb-earns__list">
-          <li><span class="pb-tag">Sealed</span><em>closed from inoculation to shutdown</em></li>
-          <li><span class="pb-tag">Biosafe</span><em>the product leaves, the organism does not</em></li>
+          <li class="pb-tag">The newest science, sooner</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════ THE CHAIN → HANDOFF ════ -->
-  <!-- The existing homepage chain, unchanged in markup, now the last beat of
-       the problem. With JS it holds, collapses onto the farmer and turns into
-       the green light; without JS or with reduced motion it reads as a static
-       chain followed by the handoff card. -->
+  <!-- The chain. With JS it collapses onto the farmer and hands off to the
+       name; without JS the chain and the name sit in normal flow. -->
   <div class="pb-stagewrap" id="chain">
     <div class="pb-stage">
       <div class="pb-chainhead">
-        <p class="kicker">The problem, in one line</p>
+        <p class="kicker">The problem</p>
         <h2>Protection exists. Getting it to the field takes time.</h2>
       </div>
 
@@ -358,10 +657,7 @@
         </ol>
       </div>
 
-      <p class="pb-chainfoot"><span>Everything in section 01 asks for protection
-      on demand, and everything in section 02 says it is made six steps away.
-      What has not moved is the road between the factory that makes it and the
-      one-hectare farm that needs it.</span></p>
+      <p class="pb-chainfoot"><span>Six of the nine steps happen before a farmer is involved.</span></p>
 
       <div class="pb-spark" aria-hidden="true"></div>
 
@@ -369,23 +665,16 @@
         <img src="assets/img/logo-720.webp" alt="The ReLeaf team logo: a seedling-headed mascot with roots, ringed by the words GEMS Taiwan." width="720" height="720" />
         <h2>ReLEAF</h2>
         <p class="pb-handoff__slogan">Make it where it grows.</p>
-        <ul class="pb-handoff__spec" aria-label="The five requirements the problem set">
-          <li>On demand</li><li>Right time</li><li>Right amount</li><li>On site</li><li>Sealed &amp; biosafe</li>
+        <ul class="pb-handoff__spec" aria-label="What the problem asks for">
+          <li>On demand</li><li>Right time</li><li>Right amount</li><li>On site</li><li>Contained</li><li>Newest science</li>
         </ul>
-        <p class="pb-handoff__gloss">A sealed perfusion bioreactor that makes
-        plant protectants at the farm, and runs only when the crop is under
-        stress. The homepage&rsquo;s dark act picks up from here.</p>
       </div>
     </div>
     <div class="pb-runway" aria-hidden="true"></div>
   </div>
 
   <footer class="pb-foot">
-    <div class="pb-inner">
-      <p>Draft for the ReLeaf wiki homepage &middot; GEMS Taiwan &middot; iGEM 2026.
-      Map layers, numbers and sources are the ones already on the wiki&rsquo;s
-      Geospatial Analysis, Hardware and Safety pages.</p>
-    </div>
+    <div class="pb-inner"><p>Draft &middot; ReLeaf &middot; GEMS Taiwan &middot; iGEM 2026</p></div>
   </footer>
 
   <script src="assets/js/problem.js" defer></script>

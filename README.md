@@ -1,22 +1,14 @@
 # ReLeaf homepage: problem section (draft)
 
-A standalone draft of the expanded problem section for the ReLeaf (GEMS Taiwan, iGEM 2026) wiki homepage. It is built to be lifted into `wiki/index.html` between the hero and the dark act.
+Draft of the problem section for the ReLeaf (GEMS Taiwan, iGEM 2026) wiki homepage, built to sit between the hero and the dark act.
 
-The five problem beats are grouped into three sections, followed by the existing chain as the handoff:
-
-| Section | Beats | Requirement it earns |
+| Section | What it argues | What it asks for |
 |---|---|---|
-| 01 The threat, and who it lands on | GIS climate volatility × farm parcels; smallholders with no instruments | On demand · Right time · Right amount |
-| 02 The gap, and what it costs | Bioprotectants exist; "why not just buy them?"; central vs on-site ledger | On site |
-| 03 The catch | Live engineered bacteria on the farm; containment | Sealed · Biosafe |
-| Handoff | Nine-step chain collapses onto the farmer → ReLeaf | all five lit |
+| 01 The threat | Climate volatility falls on the smallest farms, and nobody there has instruments | On demand, right time, right amount |
+| 02 The gap | Protectants are made far away; making them on the farm puts live bacteria on the farm | On site, contained and biosafe |
+| 03 The distance | New protectants spend years in labs before a farmer can buy one | The newest science, sooner |
+| Handoff | The nine-step chain collapses onto the farmer and becomes ReLeaf | all of the above |
 
-## Baking into the wiki
+To bake in: drop the STANDALONE block in `assets/css/problem.css`, keep the `.pb-` and `.jr-` rules, and don't ship the copied `tokens.css`. Map layers match `wiki/assets/img/bigpicture/map/`.
 
-- `assets/css/tokens.css` is a copy of `wiki/assets/css/tokens.css`. Don't ship this copy.
-- `assets/css/problem.css`: delete the block marked `STANDALONE ONLY`. Everything else is prefixed `.pb-`.
-- `assets/js/problem.js`: three self-contained pieces (map toggle, drawing reveal, chain collapse).
-- The map layers in `assets/img/` are the same files as `wiki/assets/img/bigpicture/map/`.
-- Sources for every number are listed in the HTML comment above each section.
-
-Run locally: `python3 -m http.server` in this folder.
+Run locally with `python3 -m http.server`.
