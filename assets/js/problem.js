@@ -68,8 +68,8 @@
     wrap.classList.add("is-live");
 
     // scene units: 6000 x 1000. Year k sits at X0 + k * STEP.
-    var X0 = 1100, STEP = 780, LAB = { x: 806, y: 640 }, ROAD = 760, SHELF = 5000, FARMER = 5470;
-    var AGE = 63, YEARS = 5, WINDOWS = 365;
+    var X0 = 1100, STEP = 390, LAB = { x: 806, y: 680 }, ROAD = 760, SHELF = 5000, FARMER = 5470;
+    var AGE = 63, YEARS = 10, WINDOWS = 730;
     var last = -1;
 
     frames.push(function () {
